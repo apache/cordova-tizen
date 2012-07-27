@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" version="1.0" viewmodes="fullscreen" id="http://YourDomain.com/cordova">  
+	<icon src="icon.png"/>  
+	<content src="index.html"/>  
+	<feature name="http://tizen.org/api/alarm" required="true"/>  
+	<feature name="http://tizen.org/api/alarm.read" required="true"/>  
+	<feature name="http://tizen.org/api/alarm.write" required="true"/>  
+	<feature name="http://tizen.org/api/application" required="true"/>  
+	<feature name="http://tizen.org/api/application.kill" required="true"/>  
+	<feature name="http://tizen.org/api/application.launch" required="true"/>  
+	<feature name="http://tizen.org/api/application.read" required="true"/>  
+	<feature name="http://tizen.org/api/bluetooth" required="true"/>  
+	<feature name="http://tizen.org/api/bluetooth.gap" required="true"/>  
+	<feature name="http://tizen.org/api/bluetooth.spp" required="true"/>  
+	<feature name="http://tizen.org/api/calendar" required="true"/>  
+	<feature name="http://tizen.org/api/calendar.read" required="true"/>  
+	<feature name="http://tizen.org/api/calendar.write" required="true"/>  
+	<feature name="http://tizen.org/api/call" required="true"/>  
+	<feature name="http://tizen.org/api/call.history" required="true"/>  
+	<feature name="http://tizen.org/api/call.history.read" required="true"/>  
+	<feature name="http://tizen.org/api/call.history.write" required="true"/>  
+	<feature name="http://tizen.org/api/call.simple" required="true"/>  
+	<feature name="http://tizen.org/api/contact" required="true"/>  
+	<feature name="http://tizen.org/api/contact.read" required="true"/>  
+	<feature name="http://tizen.org/api/contact.write" required="true"/>  
+	<feature name="http://tizen.org/api/filesystem" required="true"/>  
+	<feature name="http://tizen.org/api/filesystem.read" required="true"/>  
+	<feature name="http://tizen.org/api/filesystem.write" required="true"/>  
+	<feature name="http://tizen.org/api/geocoder" required="true"/>  
+	<feature name="http://tizen.org/api/mediacontent" required="true"/>  
+	<feature name="http://tizen.org/api/mediacontent.read" required="true"/>  
+	<feature name="http://tizen.org/api/messaging" required="true"/>  
+	<feature name="http://tizen.org/api/messaging.read" required="true"/>  
+	<feature name="http://tizen.org/api/messaging.send" required="true"/>  
+	<feature name="http://tizen.org/api/messaging.write" required="true"/>  
+	<feature name="http://tizen.org/api/nfc" required="true"/>  
+	<feature name="http://tizen.org/api/nfc.p2p" required="true"/>  
+	<feature name="http://tizen.org/api/nfc.se" required="true"/>  
+	<feature name="http://tizen.org/api/nfc.tag" required="true"/>  
+	<feature name="http://tizen.org/api/systeminfo" required="true"/>  
+	<feature name="http://tizen.org/api/time" required="true"/>  
+	<feature name="http://tizen.org/api/time.read" required="true"/>  
+	<feature name="http://tizen.org/api/time.write" required="true"/>  
+	<feature name="http://tizen.org/api/tizen" required="true"/>  
+	<feature name="http://tizen.org/api/sensors" required="true"/>  
+	<name>Cordova</name>  
+	<author/>
+	<license/>
+	<description>Cordova for Tizen sample application</description>
+</widget>
