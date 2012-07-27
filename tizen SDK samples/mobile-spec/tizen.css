@@ -1,0 +1,62 @@
+.ui-popupwindow-screen {
+	background: #000000;
+	opacity: 0.4;
+}
+.ui-popupwindow {
+	background: #828282;
+	padding: 1px 1px;
+	color: white;
+	width: 80%;
+	margin-left: 10%;
+}
+
+.popup-title {
+	background: #018ccc;
+	padding: 5px 5px;
+}
+
+.popup-title p {
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+.popup-text {
+	background: #2d2d2d;
+	padding: 5px 5px;
+}
+
+.popup-text p {
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	vertical-align: middle;
+	line-height:100px;
+}
+
+.popup-button-bg {
+	background: #424242;
+	padding: 5px 5px;
+}
+
+.popup-button-bg ul {
+	list-style-type:none;
+	width: 80%;
+	margin-left: 10%;
+	text-align: center;
+	padding: 0px;
+}
+
+.popup-button-bg li {
+	display: inline;
+}
+
+.popup-button-bg li input {
+	border-radius:4px 4px 4px 4px;
+	border: 0px;
+	background: #545454;
+	padding:5px 15px;
+	color: white;
+	min-width: 80px;
+	margin: 0px 5px;
+}
