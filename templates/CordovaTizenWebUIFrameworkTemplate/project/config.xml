@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" version="2.0 Beta" viewmodes="fullscreen" id="http://YourDomain.com/cordova-web-ui-template">  
+	<icon src="icon.png"/>  
+	<content src="index.html"/>  
+	<feature name="http://tizen.org/api/application" required="true"/>  
+	<feature name="http://tizen.org/api/application.kill" required="true"/>  
+	<feature name="http://tizen.org/api/application.launch" required="true"/>  
+	<feature name="http://tizen.org/api/application.read" required="true"/>  
+	<feature name="http://tizen.org/api/contact" required="true"/>  
+	<feature name="http://tizen.org/api/contact.read" required="true"/>  
+	<feature name="http://tizen.org/api/contact.write" required="true"/>  
+	<feature name="http://tizen.org/api/systeminfo" required="true"/>  
+	<feature name="http://tizen.org/api/time" required="true"/>  
+	<feature name="http://tizen.org/api/time.read" required="true"/>  
+	<feature name="http://tizen.org/api/time.write" required="true"/>  
+	<feature name="http://tizen.org/api/tizen" required="true"/>  
+	<name>cordova-web-ui-template</name>
+</widget>

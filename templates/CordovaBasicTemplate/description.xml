@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../description.xsl"?>
+<Overview version="0.2">
+  <SampleName>Cordova Blank Application</SampleName>
+  <SampleVersion></SampleVersion>
+  <Preview>snapshot.png</Preview>
+  <Description>
+    Cordova Tizen Blank Application.
+  </Description>
+</Overview>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tizen-app-template  xmlns="http://www.s-core.com/tizen-app-template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.s-core.com/tizen-app-template tizen-app-template.xsd "
+sdk-version="1.0 beta" template-version="0.2" 
+icon64="ic_cordova_64.png" icon32="ic_cordova_32.png">
+    <template-name>CordovaBasicTemplate</template-name>
+    <widget-type>TIZEN</widget-type>
+    <description-file-name>description.xml</description-file-name>
+</tizen-app-template>
