@@ -71,7 +71,7 @@ Further Reading
 ---
 
 - [Cordova home](http://incubator.apache.org/cordova/)
-- [Cordova Documentation](http://docs.phonegap.com)
+- [Cordova Documentation](http://docs.cordova.io)
 - [Cordova Issue Tracker](https://issues.apache.org/jira/browse/CB)
 - [Tizen Web SDK Documentation](https://developer.tizen.org/documentation)
 
