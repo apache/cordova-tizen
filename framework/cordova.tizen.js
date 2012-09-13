@@ -1,6 +1,6 @@
-// commit dc26996057d667e1a8ac6d524918cce0e7078e21
+// commit 143f5221a6251c9cbccdedc57005c61551b97f12
 
-// File generated at :: Tue Sep 11 2012 18:04:25 GMT-0700 (PDT)
+// File generated at :: Wed Sep 12 2012 17:09:27 GMT-0700 (PDT)
 
 /*
  Licensed to the Apache Software Foundation (ASF) under one
@@ -682,13 +682,6 @@ module.exports = {
             }
         },
         Cordova: {
-            children: {
-                exec: {
-                    path: 'cordova/exec'
-                }
-            }
-        },
-        PhoneGap:{
             children: {
                 exec: {
                     path: 'cordova/exec'
@@ -5808,7 +5801,7 @@ function Device() {
     this.version = null;
     this.uuid = null;
     this.name = null;
-    this.cordova = "2.1.0rc2";
+    this.cordova = "2.1.0";
     this.platform = "Tizen";
 
     var me = this;
