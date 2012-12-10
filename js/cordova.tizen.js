@@ -1,6 +1,6 @@
-// commit 05bd1a469fd7964a7eb8363e55a949594afe9353
+// commit 861ff3d507fd5c64ed789d8abe360690e588252e
 
-// File generated at :: Mon Nov 26 2012 11:26:59 GMT-0800 (PST)
+// File generated at :: Mon Dec 10 2012 14:51:17 GMT-0800 (PST)
 
 /*
  Licensed to the Apache Software Foundation (ASF) under one
@@ -3105,17 +3105,54 @@ define("cordova/plugin/InAppBrowser", function(require, exports, module) {
 
 var exec = require('cordova/exec');
 
-var InAppBrowser = {
-    open : function(strUrl, strWindowName, strWindowFeatures) {
-        exec(null, null, "InAppBrowser", "open", [strUrl, strWindowName, strWindowFeatures]);
-        return InAppBrowser;
-    },
-    close : function() {
-        exec(null, null, "InAppBrowser", "close", []);
+function InAppBrowser()
+{
+   var _channel = require('cordova/channel');
+   this.channels = {
+        'loadstart': _channel.create('loadstart'),
+        'loadstop' : _channel.create('loadstop'),
+        'exit' : _channel.create('exit')
+   };
+}
+
+InAppBrowser.prototype._eventHandler = function(event)
+{
+    if (event.type in this.channels) {
+        this.channels[event.type].fire(event);
     }
-};
+}
+
+InAppBrowser.open = function(strUrl, strWindowName, strWindowFeatures)
+{
+    var iab = new InAppBrowser();
+    var cb = function(eventname) {
+       iab._eventHandler(eventname);
+    }
+    exec(cb, null, "InAppBrowser", "open", [strUrl, strWindowName, strWindowFeatures]);
+    return iab;
+}
+
+InAppBrowser.prototype.close = function(eventname, f)
+{
+    exec(null, null, "InAppBrowser", "close", []);
+}
+
+InAppBrowser.prototype.addEventListener = function(eventname, f)
+{
+    if (eventname in this.channels) {
+        this.channels[eventname].subscribe(f);
+    }
+}
+
+InAppBrowser.prototype.removeEventListener = function(eventname, f)
+{
+    if (eventname in this.channels) {
+        this.channels[eventname].unsubscribe(f);
+    }
+}
 
 module.exports = InAppBrowser.open;
+
 
 });
 
@@ -6442,7 +6479,7 @@ function Device() {
     this.version = null;
     this.uuid = null;
     this.name = null;
-    this.cordova = "2.3.0rc1";
+    this.cordova = "2.3.0rc2";
     this.platform = "Tizen";
 
     var me = this;
