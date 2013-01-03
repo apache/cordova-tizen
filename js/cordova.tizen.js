@@ -1,6 +1,6 @@
-// commit 861ff3d507fd5c64ed789d8abe360690e588252e
+// commit 24d65ab645742e8360c3dd16d7a36411cc3383e0
 
-// File generated at :: Mon Dec 10 2012 14:51:17 GMT-0800 (PST)
+// File generated at :: Wed Jan 02 2013 22:16:07 GMT-0800 (PST)
 
 /*
  Licensed to the Apache Software Foundation (ASF) under one
@@ -6479,7 +6479,7 @@ function Device() {
     this.version = null;
     this.uuid = null;
     this.name = null;
-    this.cordova = "2.3.0rc2";
+    this.cordova = "2.3.0";
     this.platform = "Tizen";
 
     var me = this;
@@ -7772,12 +7772,12 @@ window.cordova = require('cordova');
 
                     // Drop the common globals into the window object, but be nice and don't overwrite anything.
                     builder.buildIntoButDoNotClobber(base.defaults, context);
-                    builder.buildIntoAndMerge(base.merges, context);
                     builder.buildIntoAndClobber(base.clobbers, context);
+                    builder.buildIntoAndMerge(base.merges, context);
 
                     builder.buildIntoButDoNotClobber(platform.defaults, context);
-                    builder.buildIntoAndMerge(platform.merges, context);
                     builder.buildIntoAndClobber(platform.clobbers, context);
+                    builder.buildIntoAndMerge(platform.merges, context);
 
                     // Call the platform-specific initialization
                     platform.initialize();
