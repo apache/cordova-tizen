@@ -1,6 +1,8 @@
-// commit 71223711fb1591b1255d871140d959fd9095f0c3
+// Platform: tizen
 
-// File generated at :: Mon Jan 21 2013 14:24:13 GMT-0800 (PST)
+// commit ac725f6ae0bd655789771e2a40b8d60cb4c8c221
+
+// File generated at :: Mon Feb 04 2013 13:56:54 GMT-0800 (PST)
 
 /*
  Licensed to the Apache Software Foundation (ASF) under one
@@ -1421,6 +1423,7 @@ module.exports = {
         CELL_2G: "2g",
         CELL_3G: "3g",
         CELL_4G: "4g",
+        CELL:"cellular",
         NONE: "none"
 };
 
@@ -6513,7 +6516,7 @@ function Device() {
     this.version = null;
     this.uuid = null;
     this.name = null;
-    this.cordova = "2.4.0rc1";
+    this.cordova = "2.4.0";
     this.platform = "Tizen";
 
     var me = this;
