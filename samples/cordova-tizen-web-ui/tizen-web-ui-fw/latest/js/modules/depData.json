@@ -1,0 +1,442 @@
+{
+	"jquery.mobile.tizen.scrollview": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.tizen.scrollview.js",
+		"name": "jquery.mobile.tizen.scrollview",
+		"depends": [],
+		"label": "Scrollview",
+		"group": "Tizen:Core",
+		"description": "Implements scroll by javascript"
+	},
+	"jquery.mobile.tizen.pinch": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.tizen.pinch.js",
+		"name": "jquery.mobile.tizen.pinch",
+		"depends": [
+			"jquery.mobile.core"
+		],
+		"label": "Tizen core",
+		"group": "Tizen:Core",
+		"description": "Tizen core library"
+	},
+	"jquery.mobile.tizen.core": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.tizen.core.js",
+		"name": "jquery.mobile.tizen.core",
+		"depends": [
+			"jquery.mobile.core",
+			"jquery.mobile.tizen.configure",
+			"util/ensurens"
+		],
+		"label": "Tizen core",
+		"group": "Tizen:Core",
+		"description": "Tizen core library"
+	},
+	"util/range": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "util/range.js",
+		"name": "util/range",
+		"depends": [],
+		"label": "Range",
+		"group": "Tizen:Utilities",
+		"description": "Makes array with given range"
+	},
+	"util/ensurens": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "util/ensurens.js",
+		"name": "util/ensurens",
+		"depends": [],
+		"label": "Ensurens",
+		"group": "Tizen:Utilities",
+		"description": "Make namespace for modules"
+	},
+	"jquery.mobile.tizen.clrlib": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.tizen.clrlib.js",
+		"name": "jquery.mobile.tizen.clrlib",
+		"depends": [
+			"util/ensurens"
+		],
+		"label": "Color library",
+		"group": "Tizen:Core",
+		"description": "Color code converter"
+	},
+	"jquery.mobile.tizen.configure": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.tizen.configure.js",
+		"name": "jquery.mobile.tizen.configure",
+		"depends": [],
+		"label": "Configuration",
+		"group": "Tizen:Core",
+		"description": "jQuery Mobile configuration for Tizen widgets"
+	},
+	"widgets/jquery.mobile.tizen.gallery3d": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.gallery3d.js",
+		"name": "widgets/jquery.mobile.tizen.gallery3d",
+		"depends": [
+			"widgets/components/imageloader",
+			"widgets/components/motionpath",
+			"widgets/components/webgl"
+		],
+		"label": "Gallery3d",
+		"group": "Tizen:Widgets",
+		"description": "3D photo gallery widget."
+	},
+	"widgets/jquery.mobile.tizen.multimediaview": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.multimediaview.js",
+		"name": "widgets/jquery.mobile.tizen.multimediaview",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Multimedia view",
+		"group": "Tizen:Widgets",
+		"description": "Shows multimedia and its controls"
+	},
+	"widgets/jquery.mobile.tizen.button": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.button.js",
+		"name": "widgets/jquery.mobile.tizen.button",
+		"depends": [],
+		"label": "Button",
+		"group": "Tizen:Widgets",
+		"description": "Tizen button"
+	},
+	"widgets/jquery.mobile.tizen.scrollview.handler": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.scrollview.handler.js",
+		"name": "widgets/jquery.mobile.tizen.scrollview.handler",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Scrollview Handler",
+		"group": "Tizen:Widgets",
+		"description": "Shows a scroll-handler with a scrollview"
+	},
+	"widgets/jquery.mobile.tizen.popupwindow.ctxpopup": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.popupwindow.ctxpopup.js",
+		"name": "widgets/jquery.mobile.tizen.popupwindow.ctxpopup",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.popupwindow",
+			"widgets/jquery.mobile.tizen.triangle"
+		],
+		"label": "Context popup",
+		"group": "Tizen:Widgets",
+		"description": "Shows popup at any place in the page content, with various styles"
+	},
+	"widgets/jquery.mobile.tizen.datetimepicker": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.datetimepicker.js",
+		"name": "widgets/jquery.mobile.tizen.datetimepicker",
+		"depends": [
+			"widgets/jquery.mobile.tizen.widgetex",
+			"widgets/jquery.mobile.tizen.popupwindow",
+			"widgets/jquery.mobile.tizen.popupwindow.ctxpopup"
+		],
+		"label": "Datetime picker",
+		"group": "Tizen:Widgets",
+		"description": "Shows date and time, and make them able to be changed by user"
+	},
+	"widgets/jquery.mobile.tizen.slider": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.slider.js",
+		"name": "widgets/jquery.mobile.tizen.slider",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Slider",
+		"group": "Tizen:Widgets",
+		"description": "Shows slider bar to input number by dragging"
+	},
+	"widgets/jquery.mobile.tizen.swipe": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.swipe.js",
+		"name": "widgets/jquery.mobile.tizen.swipe",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Swipe list",
+		"group": "Tizen:Widgets",
+		"description": "Shows background listitem by swiping left/right on a listitem"
+	},
+	"widgets/jquery.mobile.tizen.listdivider": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.listdivider.js",
+		"name": "widgets/jquery.mobile.tizen.listdivider",
+		"depends": [],
+		"label": "List divider",
+		"group": "Tizen:Widgets",
+		"description": "Divider listitem in listview"
+	},
+	"widgets/jquery.mobile.tizen.notification": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.notification.js",
+		"name": "widgets/jquery.mobile.tizen.notification",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Notification",
+		"group": "Tizen:Widgets",
+		"description": "Shows notification popup over header/footer"
+	},
+	"widgets/jquery.mobile.tizen.pagelayout": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.pagelayout.js",
+		"name": "widgets/jquery.mobile.tizen.pagelayout",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Pagelayout",
+		"group": "Tizen:Widgets",
+		"description": "Set a layout of pages"
+	},
+	"widgets/jquery.mobile.tizen.checkbox": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.checkbox.js",
+		"name": "widgets/jquery.mobile.tizen.checkbox",
+		"depends": [],
+		"label": "//>>label: Checkbox",
+		"group": "//>>group: Tizen:Widgets",
+		"description": "//>>description: Checkbox widget"
+	},
+	"widgets/jquery.mobile.tizen.splitview": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.splitview.js",
+		"name": "widgets/jquery.mobile.tizen.splitview",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Split view",
+		"group": "Tizen:Widgets",
+		"description": "Show different HTML contents at the same time on each divided pane."
+	},
+	"widgets/jquery.mobile.tizen.virtualgrid": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.virtualgrid.js",
+		"name": "widgets/jquery.mobile.tizen.virtualgrid",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Virtual grid",
+		"group": "Tizen:Widgets",
+		"description": "Shows grid swapping its contents automatically"
+	},
+	"widgets/jquery.mobile.tizen.searchbar": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.searchbar.js",
+		"name": "widgets/jquery.mobile.tizen.searchbar",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.pagelayout"
+		],
+		"label": "Searchbar",
+		"group": "Tizen:Widgets",
+		"description": "Shows searchbar, for text search"
+	},
+	"widgets/jquery.mobile.tizen.gallery": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.gallery.js",
+		"name": "widgets/jquery.mobile.tizen.gallery",
+		"depends": [],
+		"label": "Gallery",
+		"group": "Tizen:Widgets",
+		"description": "Shows images one by one, and moves them by flicking"
+	},
+	"widgets/jquery.mobile.tizen.circularview": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.circularview.js",
+		"name": "widgets/jquery.mobile.tizen.circularview",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Circularview",
+		"group": "Tizen:Widgets",
+		"description": "Container widget showing children circulary"
+	},
+	"widgets/components/imageloader": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/components/imageloader.js",
+		"name": "widgets/components/imageloader",
+		"depends": [],
+		"label": "Image loader",
+		"group": "Tizen:Widgets:Components",
+		"description": "Tizen image loader component for gallery3d"
+	},
+	"widgets/components/motionpath": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/components/motionpath.js",
+		"name": "widgets/components/motionpath",
+		"depends": [],
+		"label": "Motion path",
+		"group": "Tizen:Widgets:Components",
+		"description": "Tizen motion path component for gallery3d"
+	},
+	"widgets/components/webgl": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/components/webgl.js",
+		"name": "widgets/components/webgl",
+		"depends": [],
+		"label": "WebGL",
+		"group": "Tizen:Widgets:Lib",
+		"description": "Tizen WebGL component for gallery3d"
+	},
+	"widgets/jquery.mobile.tizen.popupwindow": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.popupwindow.js",
+		"name": "widgets/jquery.mobile.tizen.popupwindow",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.widgetex"
+		],
+		"label": "Popup",
+		"group": "Tizen:Widgets",
+		"description": "Shows popup on the page"
+	},
+	"widgets/jquery.mobile.tizen.virtuallistview": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.virtuallistview.js",
+		"name": "widgets/jquery.mobile.tizen.virtuallistview",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Virtual listview",
+		"group": "Tizen:Widgets",
+		"description": "Shows listview swapping its contents automatically"
+	},
+	"widgets/jquery.mobile.tizen.progress": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.progress.js",
+		"name": "widgets/jquery.mobile.tizen.progress",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Progress",
+		"group": "Tizen:Widgets",
+		"description": "Shows progressbar or progress circle"
+	},
+	"widgets/jquery.mobile.tizen.fastscroll": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.fastscroll.js",
+		"name": "widgets/jquery.mobile.tizen.fastscroll",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Fastscroll",
+		"group": "Tizen:Widgets",
+		"description": "Shows list index and scroll to the index directly"
+	},
+	"widgets/jquery.mobile.tizen.widgetex": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.widgetex.js",
+		"name": "widgets/jquery.mobile.tizen.widgetex",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Widget extension",
+		"group": "Tizen:Widgets",
+		"description": "Widget class extending functionality of jQueryMobile widget class"
+	},
+	"widgets/jquery.mobile.tizen.tabbar": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.tabbar.js",
+		"name": "widgets/jquery.mobile.tizen.tabbar",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.pagelayout"
+		],
+		"label": "Tabbar",
+		"group": "Tizen:Widgets",
+		"description": "Shows buttons divided automatically on the header"
+	},
+	"widgets/jquery.mobile.tizen.triangle": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.triangle.js",
+		"name": "widgets/jquery.mobile.tizen.triangle",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.widgetex"
+		],
+		"label": "Triangle",
+		"group": "Tizen:Widgets",
+		"description": "Shows triangle, used by context popup"
+	},
+	"widgets/jquery.mobile.tizen.tokentextarea": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.tokentextarea.js",
+		"name": "widgets/jquery.mobile.tizen.tokentextarea",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Token textarea",
+		"group": "Tizen:Widgets",
+		"description": "Make words to selectable tokens"
+	},
+	"widgets/jquery.mobile.tizen.progressbar": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.progressbar.js",
+		"name": "widgets/jquery.mobile.tizen.progressbar",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Progressbar",
+		"group": "Tizen:Widgets",
+		"description": "Shows progressbar"
+	},
+	"widgets/jquery.mobile.tizen.extendablelist": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "widgets/jquery.mobile.tizen.extendablelist.js",
+		"name": "widgets/jquery.mobile.tizen.extendablelist",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Extendable list",
+		"group": "Tizen:Widgets",
+		"description": "Listview which can be extended more and more"
+	},
+	"jquery.mobile.tizen.loadprototype": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.tizen.loadprototype.js",
+		"name": "jquery.mobile.tizen.loadprototype",
+		"depends": [
+			"util/ensurens"
+		],
+		"label": "Widget prototype loader",
+		"group": "Tizen:Core",
+		"description": "Loads widget's prototype"
+	},
+	"jquery.mobile.tizen.loader": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.tizen.loader.js",
+		"name": "jquery.mobile.tizen.loader",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Loader",
+		"group": "Tizen:Core",
+		"description": "Loader doing theme loading, viewport setting, globalize loading, etc."
+	},
+	"jquery.mobile.label": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.label.js",
+		"name": "jquery.mobile.label",
+		"depends": [],
+		"label": "Label",
+		"group": "Tizen:Core",
+		"description": "Add markup for labels"
+	},
+	"jquery.mobile.core": {
+		"basedir": "/home/blueisle/playground/web/tizen/web-ui-fw.release/src/js",
+		"path": "jquery.mobile.core",
+		"name": "jquery.mobile.core",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	}
+}

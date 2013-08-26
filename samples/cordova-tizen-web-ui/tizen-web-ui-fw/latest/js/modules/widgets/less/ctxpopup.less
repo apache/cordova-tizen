@@ -1,0 +1,21 @@
+.ui-ctxpopup {
+    display: table;
+
+    .ui-ctxpopup-row {
+        display: table-row;
+
+        .ui-ctxpopup-cell {
+            display: table-cell;
+        }
+    }
+}
+/* 
+ * The settings in this file are part of the theme. They are not part of the structure of ctxpopup.
+ * In the default theme, ui-body-* has a border width of 1px. So, to make the triangles cross this border, we set them in
+ * by 1px.
+ */
+.ui-ctxpopup-row {
+	.ui-triangle-top { top: 1px; }
+	.ui-triangle-left { left: 1px; }
+	.ui-triangle-right { right: 1px; }
+	.ui-triangle-bottom { bottom: 1px; }
