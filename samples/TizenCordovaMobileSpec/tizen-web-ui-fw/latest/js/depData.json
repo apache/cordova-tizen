@@ -1,0 +1,1305 @@
+{
+	"text": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "text.js",
+		"name": "text",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"jquery.mobile.media": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.media.js",
+		"name": "jquery.mobile.media",
+		"depends": [
+			"jquery",
+			"jquery.mobile.core"
+		],
+		"label": "Match Media Polyfill",
+		"group": "Utilities",
+		"description": "A workaround for browsers without window.matchMedia"
+	},
+	"jquery.mobile": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.js",
+		"name": "jquery.mobile",
+		"depends": [
+			"require",
+			"widgets/loader",
+			"jquery.mobile.navigation",
+			"jquery.mobile.navigation.pushstate",
+			"jquery.mobile.transitions",
+			"jquery.mobile.degradeInputs",
+			"widgets/dialog",
+			"widgets/page.sections",
+			"widgets/collapsible",
+			"widgets/collapsibleSet",
+			"jquery.mobile.fieldContain",
+			"jquery.mobile.grid",
+			"widgets/navbar",
+			"widgets/listview",
+			"widgets/listview.filter",
+			"widgets/listview.autodividers",
+			"jquery.mobile.nojs",
+			"widgets/forms/checkboxradio",
+			"widgets/forms/button",
+			"widgets/forms/slider",
+			"widgets/forms/textinput",
+			"widgets/forms/select.custom",
+			"widgets/forms/select",
+			"jquery.mobile.buttonMarkup",
+			"jquery.mobile.controlGroup",
+			"jquery.mobile.links",
+			"widgets/fixedToolbar",
+			"widgets/popup",
+			"jquery.mobile.zoom",
+			"jquery.mobile.zoom.iosorientationfix"
+		],
+		"label": "",
+		"group": "exclude",
+		"description": ""
+	},
+	"jquery.mobile.tizen.loadprototype": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.tizen.loadprototype.js",
+		"name": "jquery.mobile.tizen.loadprototype",
+		"depends": [
+			"util/ensurens"
+		],
+		"label": "Widget prototype loader",
+		"group": "Tizen:Core",
+		"description": "Loads widget's prototype"
+	},
+	"jquery.ui.widget": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.ui.widget.js",
+		"name": "jquery.ui.widget",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"jquery.mobile.support.touch": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.support.touch.js",
+		"name": "jquery.mobile.support.touch",
+		"depends": [
+			"jquery"
+		],
+		"label": "Touch support test",
+		"group": "Core",
+		"description": "Touch feature test"
+	},
+	"jquery": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.js",
+		"name": "jquery",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"widgets/jquery.mobile.tizen.splitview": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.splitview.js",
+		"name": "widgets/jquery.mobile.tizen.splitview",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Split view",
+		"group": "Tizen:Widgets",
+		"description": "Show different HTML contents at the same time on each divided pane."
+	},
+	"widgets/jquery.mobile.tizen.pagelayout": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.pagelayout.js",
+		"name": "widgets/jquery.mobile.tizen.pagelayout",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Pagelayout",
+		"group": "Tizen:Widgets",
+		"description": "Set a layout of pages"
+	},
+	"widgets/page": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/page.js",
+		"name": "widgets/page",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.widget"
+		],
+		"label": "Page Creation",
+		"group": "Core",
+		"description": "Basic page definition and formatting."
+	},
+	"widgets/jquery.mobile.tizen.progress": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.progress.js",
+		"name": "widgets/jquery.mobile.tizen.progress",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Progress",
+		"group": "Tizen:Widgets",
+		"description": "Shows progressbar or progress circle"
+	},
+	"widgets/jquery.mobile.tizen.tabbar": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.tabbar.js",
+		"name": "widgets/jquery.mobile.tizen.tabbar",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.pagelayout"
+		],
+		"label": "Tabbar",
+		"group": "Tizen:Widgets",
+		"description": "Shows buttons divided automatically on the header"
+	},
+	"widgets/jquery.mobile.tizen.checkbox": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.checkbox.js",
+		"name": "widgets/jquery.mobile.tizen.checkbox",
+		"depends": [],
+		"label": "//>>label: Checkbox",
+		"group": "//>>group: Tizen:Widgets",
+		"description": "//>>description: Checkbox widget"
+	},
+	"widgets/jquery.mobile.tizen.scrollview.handler": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.scrollview.handler.js",
+		"name": "widgets/jquery.mobile.tizen.scrollview.handler",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Scrollview Handler",
+		"group": "Tizen:Widgets",
+		"description": "Shows a scroll-handler with a scrollview"
+	},
+	"widgets/jquery.mobile.tizen.gallery": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.gallery.js",
+		"name": "widgets/jquery.mobile.tizen.gallery",
+		"depends": [],
+		"label": "Gallery",
+		"group": "Tizen:Widgets",
+		"description": "Shows images one by one, and moves them by flicking"
+	},
+	"widgets/popup": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/popup.js",
+		"name": "widgets/popup",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.widget",
+			"jquery.mobile.support",
+			"jquery.mobile.navigation",
+			"widgets/depend!../jquery.hashchange[jquery]"
+		],
+		"label": "Popups",
+		"group": "Widgets",
+		"description": "Popup windows"
+	},
+	"widgets/jquery.mobile.tizen.popupwindow": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.popupwindow.js",
+		"name": "widgets/jquery.mobile.tizen.popupwindow",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.widgetex"
+		],
+		"label": "Popup",
+		"group": "Tizen:Widgets",
+		"description": "Shows popup on the page"
+	},
+	"widgets/collapsible": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/collapsible.js",
+		"name": "widgets/collapsible",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.widget",
+			"jquery.mobile.buttonMarkup"
+		],
+		"label": "Collapsible",
+		"group": "Widgets",
+		"description": "Creates collapsible content blocks."
+	},
+	"widgets/jquery.mobile.tizen.fastscroll": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.fastscroll.js",
+		"name": "widgets/jquery.mobile.tizen.fastscroll",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Fastscroll",
+		"group": "Tizen:Widgets",
+		"description": "Shows list index and scroll to the index directly"
+	},
+	"widgets/jquery.mobile.tizen.widgetex": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.widgetex.js",
+		"name": "widgets/jquery.mobile.tizen.widgetex",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Widget extension",
+		"group": "Tizen:Widgets",
+		"description": "Widget class extending functionality of jQueryMobile widget class"
+	},
+	"widgets/jquery.mobile.tizen.listdivider": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.listdivider.js",
+		"name": "widgets/jquery.mobile.tizen.listdivider",
+		"depends": [],
+		"label": "List divider",
+		"group": "Tizen:Widgets",
+		"description": "Divider listitem in listview"
+	},
+	"widgets/dialog": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/dialog.js",
+		"name": "widgets/dialog",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.widget"
+		],
+		"label": "Dialogs",
+		"group": "Widgets",
+		"description": "Displays a page as a modal dialog with inset appearance and overlay background"
+	},
+	"widgets/navbar": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/navbar.js",
+		"name": "widgets/navbar",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.widget",
+			"jquery.mobile.buttonMarkup",
+			"jquery.mobile.grid"
+		],
+		"label": "Navbars",
+		"group": "Widgets",
+		"description": "Formats groups of links as horizontal navigation bars."
+	},
+	"widgets/jquery.mobile.tizen.tokentextarea": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.tokentextarea.js",
+		"name": "widgets/jquery.mobile.tizen.tokentextarea",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Token textarea",
+		"group": "Tizen:Widgets",
+		"description": "Make words to selectable tokens"
+	},
+	"widgets/jquery.mobile.tizen.circularview": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.circularview.js",
+		"name": "widgets/jquery.mobile.tizen.circularview",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Circularview",
+		"group": "Tizen:Widgets",
+		"description": "Container widget showing children circulary"
+	},
+	"widgets/jquery.mobile.tizen.virtualgrid": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.virtualgrid.js",
+		"name": "widgets/jquery.mobile.tizen.virtualgrid",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Virtual grid",
+		"group": "Tizen:Widgets",
+		"description": "Shows grid swapping its contents automatically"
+	},
+	"widgets/jquery.mobile.tizen.notification": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.notification.js",
+		"name": "widgets/jquery.mobile.tizen.notification",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Notification",
+		"group": "Tizen:Widgets",
+		"description": "Shows notification popup over header/footer"
+	},
+	"widgets/page.sections": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/page.sections.js",
+		"name": "widgets/page.sections",
+		"depends": [
+			"widgets/jquery",
+			"widgets/page",
+			"jquery.mobile.core"
+		],
+		"label": "Page Sections",
+		"group": "Core",
+		"description": "Theming and layout of headers, footers, and content areas"
+	},
+	"widgets/jquery.mobile.tizen.datetimepicker": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.datetimepicker.js",
+		"name": "widgets/jquery.mobile.tizen.datetimepicker",
+		"depends": [
+			"widgets/jquery.mobile.tizen.widgetex",
+			"widgets/jquery.mobile.tizen.popupwindow",
+			"widgets/jquery.mobile.tizen.popupwindow.ctxpopup"
+		],
+		"label": "Datetime picker",
+		"group": "Tizen:Widgets",
+		"description": "Shows date and time, and make them able to be changed by user"
+	},
+	"widgets/listview.filter": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/listview.filter.js",
+		"name": "widgets/listview.filter",
+		"depends": [
+			"widgets/jquery",
+			"widgets/listview",
+			"widgets/forms/textinput"
+		],
+		"label": "Listview: Filter",
+		"group": "Widgets",
+		"description": "Extends the listview to add a search box to filter lists"
+	},
+	"widgets/listview.autodividers": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/listview.autodividers.js",
+		"name": "widgets/listview.autodividers",
+		"depends": [
+			"widgets/jquery",
+			"widgets/listview"
+		],
+		"label": "Listview Autodividers",
+		"group": "Widgets",
+		"description": "Generates dividers for listview items"
+	},
+	"widgets/jquery.mobile.tizen.virtuallistview": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.virtuallistview.js",
+		"name": "widgets/jquery.mobile.tizen.virtuallistview",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Virtual listview",
+		"group": "Tizen:Widgets",
+		"description": "Shows listview swapping its contents automatically"
+	},
+	"widgets/jquery.mobile.tizen.searchbar": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.searchbar.js",
+		"name": "widgets/jquery.mobile.tizen.searchbar",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.pagelayout"
+		],
+		"label": "Searchbar",
+		"group": "Tizen:Widgets",
+		"description": "Shows searchbar, for text search"
+	},
+	"widgets/jquery.mobile.tizen.popupwindow.ctxpopup": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.popupwindow.ctxpopup.js",
+		"name": "widgets/jquery.mobile.tizen.popupwindow.ctxpopup",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.popupwindow",
+			"widgets/jquery.mobile.tizen.triangle"
+		],
+		"label": "Context popup",
+		"group": "Tizen:Widgets",
+		"description": "Shows popup at any place in the page content, with various styles"
+	},
+	"widgets/jquery.mobile.tizen.extendablelist": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.extendablelist.js",
+		"name": "widgets/jquery.mobile.tizen.extendablelist",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Extendable list",
+		"group": "Tizen:Widgets",
+		"description": "Listview which can be extended more and more"
+	},
+	"widgets/jquery.mobile.tizen.triangle": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.triangle.js",
+		"name": "widgets/jquery.mobile.tizen.triangle",
+		"depends": [
+			"jquery.mobile.tizen.core",
+			"widgets/jquery.mobile.tizen.widgetex"
+		],
+		"label": "Triangle",
+		"group": "Tizen:Widgets",
+		"description": "Shows triangle, used by context popup"
+	},
+	"widgets/jquery.mobile.tizen.progressbar": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.progressbar.js",
+		"name": "widgets/jquery.mobile.tizen.progressbar",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Progressbar",
+		"group": "Tizen:Widgets",
+		"description": "Shows progressbar"
+	},
+	"widgets/listview": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/listview.js",
+		"name": "widgets/listview",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.widget",
+			"jquery.mobile.buttonMarkup",
+			"widgets/page",
+			"widgets/page.sections"
+		],
+		"label": "Listview",
+		"group": "Widgets",
+		"description": "Applies listview styling of various types (standard, numbered, split button, etc.)"
+	},
+	"widgets/components/webgl": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/components/webgl.js",
+		"name": "widgets/components/webgl",
+		"depends": [],
+		"label": "//>>label: WebGL",
+		"group": "//>>group: Tizen:Widgets:Lib",
+		"description": "//>>description: Tizen WebGL component for gallery3d"
+	},
+	"widgets/components/motionpath": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/components/motionpath.js",
+		"name": "widgets/components/motionpath",
+		"depends": [],
+		"label": "Motion path",
+		"group": "Tizen:Widgets:Components",
+		"description": "Tizen motion path component for gallery3d"
+	},
+	"widgets/components/imageloader": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/components/imageloader.js",
+		"name": "widgets/components/imageloader",
+		"depends": [],
+		"label": "//>>label: Image loader",
+		"group": "//>>group: Tizen:Widgets:Components",
+		"description": "//>>description: Tizen image loader component for gallery3d"
+	},
+	"widgets/forms/button": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/forms/button.js",
+		"name": "widgets/forms/button",
+		"depends": [
+			"widgets/forms/jquery",
+			"jquery.mobile.widget",
+			"jquery.mobile.buttonMarkup"
+		],
+		"label": "Buttons: Input or button-based",
+		"group": "Forms",
+		"description": "Custom-styled native input/buttons"
+	},
+	"widgets/forms/select.custom": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/forms/select.custom.js",
+		"name": "widgets/forms/select.custom",
+		"depends": [
+			"widgets/forms/jquery",
+			"jquery.mobile.buttonMarkup",
+			"jquery.mobile.core",
+			"widgets/dialog",
+			"widgets/forms/select",
+			"widgets/listview",
+			"widgets/page",
+			"widgets/popup",
+			"widgets/page.sections"
+		],
+		"label": "Selects: Custom menus",
+		"group": "Forms",
+		"description": "Extension to select menus to support menu styling, placeholder options, and multi-select features."
+	},
+	"widgets/forms/textinput": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/forms/textinput.js",
+		"name": "widgets/forms/textinput",
+		"depends": [
+			"widgets/forms/jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.widget",
+			"jquery.mobile.degradeInputs",
+			"jquery.mobile.buttonMarkup",
+			"jquery.mobile.zoom"
+		],
+		"label": "Text Inputs & Textareas",
+		"group": "Forms",
+		"description": "Enhances and consistently styles text inputs."
+	},
+	"widgets/forms/slider": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/forms/slider.js",
+		"name": "widgets/forms/slider",
+		"depends": [
+			"widgets/forms/jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.widget",
+			"widgets/forms/textinput",
+			"jquery.mobile.buttonMarkup"
+		],
+		"label": "Slider",
+		"group": "Forms",
+		"description": "Slider form widget"
+	},
+	"widgets/forms/select": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/forms/select.js",
+		"name": "widgets/forms/select",
+		"depends": [
+			"widgets/forms/jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.widget",
+			"jquery.mobile.buttonMarkup",
+			"jquery.mobile.zoom"
+		],
+		"label": "Selects",
+		"group": "Forms",
+		"description": "Consistent styling for native select menus. Tapping opens a native select menu."
+	},
+	"widgets/forms/checkboxradio": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/forms/checkboxradio.js",
+		"name": "widgets/forms/checkboxradio",
+		"depends": [
+			"widgets/forms/jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.widget",
+			"jquery.mobile.buttonMarkup"
+		],
+		"label": "Checkboxes & Radio Buttons",
+		"group": "Forms",
+		"description": "Consistent styling for checkboxes/radio buttons."
+	},
+	"widgets/loader": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/loader.js",
+		"name": "widgets/loader",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.widget"
+		],
+		"label": "loading message",
+		"group": "Navigation",
+		"description": "packaged loading message functionality"
+	},
+	"widgets/fixedToolbar": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/fixedToolbar.js",
+		"name": "widgets/fixedToolbar",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.widget",
+			"jquery.mobile.core",
+			"jquery.mobile.navigation",
+			"widgets/page",
+			"widgets/page.sections",
+			"jquery.mobile.zoom"
+		],
+		"label": "Toolbars: Fixed",
+		"group": "Widgets",
+		"description": "Behavior for \"fixed\" headers and footers"
+	},
+	"widgets/jquery.mobile.tizen.button": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.button.js",
+		"name": "widgets/jquery.mobile.tizen.button",
+		"depends": [],
+		"label": "Button",
+		"group": "Tizen:Widgets",
+		"description": "Tizen button"
+	},
+	"widgets/jquery.mobile.tizen.slider": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.slider.js",
+		"name": "widgets/jquery.mobile.tizen.slider",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Slider",
+		"group": "Tizen:Widgets",
+		"description": "Shows slider bar to input number by dragging"
+	},
+	"widgets/jquery.mobile.tizen.multimediaview": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.multimediaview.js",
+		"name": "widgets/jquery.mobile.tizen.multimediaview",
+		"depends": [
+			"jquery.mobile.tizen.scrollview"
+		],
+		"label": "Multimedia view",
+		"group": "Tizen:Widgets",
+		"description": "Shows multimedia and its controls"
+	},
+	"widgets/jquery.mobile.tizen.gallery3d": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.gallery3d.js",
+		"name": "widgets/jquery.mobile.tizen.gallery3d",
+		"depends": [
+			"widgets/components/imageloader",
+			"widgets/components/motionpath",
+			"widgets/components/webgl"
+		],
+		"label": "Gallery3d",
+		"group": "Tizen:Widgets",
+		"description": "3D photo gallery widget."
+	},
+	"widgets/jquery.mobile.tizen.swipe": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery.mobile.tizen.swipe.js",
+		"name": "widgets/jquery.mobile.tizen.swipe",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Swipe list",
+		"group": "Tizen:Widgets",
+		"description": "Shows background listitem by swiping left/right on a listitem"
+	},
+	"widgets/collapsibleSet": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/collapsibleSet.js",
+		"name": "widgets/collapsibleSet",
+		"depends": [
+			"widgets/jquery",
+			"jquery.mobile.widget",
+			"widgets/collapsible"
+		],
+		"label": "Collapsible Sets (Accordions)",
+		"group": "Widgets",
+		"description": "For creating grouped collapsible content areas."
+	},
+	"jquery.mobile.navigation": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.navigation.js",
+		"name": "jquery.mobile.navigation",
+		"depends": [
+			"jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.events",
+			"jquery.mobile.support",
+			"depend!./jquery.hashchange[jquery]",
+			"widgets/page",
+			"jquery.mobile.transition"
+		],
+		"label": "AJAX Navigation System",
+		"group": "Navigation",
+		"description": "Applies the AJAX navigation system to links and forms to enable page transitions"
+	},
+	"jquery.tag.inserter": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.tag.inserter.js",
+		"name": "jquery.tag.inserter",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"jquery.mobile.widget": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.widget.js",
+		"name": "jquery.mobile.widget",
+		"depends": [
+			"jquery",
+			"depend!./jquery.ui.widget[jquery]"
+		],
+		"label": "Widget Factory",
+		"group": "Core",
+		"description": "Widget factory extentions for mobile."
+	},
+	"jquery.mobile.init": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.init.js",
+		"name": "jquery.mobile.init",
+		"depends": [
+			"jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.support",
+			"jquery.mobile.navigation",
+			"jquery.mobile.navigation.pushstate",
+			"widgets/loader",
+			"jquery.mobile.vmouse",
+			"depend!./jquery.hashchange[jquery]"
+		],
+		"label": "Init",
+		"group": "Core",
+		"description": "Global initialization of the library."
+	},
+	"jquery.mobile.support.orientation": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.support.orientation.js",
+		"name": "jquery.mobile.support.orientation",
+		"depends": [
+			"jquery"
+		],
+		"label": "Orientation support test",
+		"group": "Core",
+		"description": "Feature test for orientation"
+	},
+	"jquery.mobile.degradeInputs": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.degradeInputs.js",
+		"name": "jquery.mobile.degradeInputs",
+		"depends": [
+			"jquery",
+			"widgets/page"
+		],
+		"label": "Degrade Inputs",
+		"group": "Utilities",
+		"description": "Changes input type to another after custom enhancements are made (ex. range > numberic)."
+	},
+	"jquery.hashchange": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.hashchange.js",
+		"name": "jquery.hashchange",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"jquery.mobile.events": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.events.js",
+		"name": "jquery.mobile.events",
+		"depends": [
+			"jquery",
+			"events/touch",
+			"events/orientationchange"
+		],
+		"label": "Events",
+		"group": "Events",
+		"description": "Custom events and shortcuts."
+	},
+	"jquery.mobile.navigation.pushstate": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.navigation.pushstate.js",
+		"name": "jquery.mobile.navigation.pushstate",
+		"depends": [
+			"jquery",
+			"jquery.mobile.navigation",
+			"depend!./jquery.hashchange[jquery]"
+		],
+		"label": "Pushstate Support",
+		"group": "Navigation",
+		"description": "history.pushState support, layered on top of hashchange."
+	},
+	"jquery.mobile.tizen.clrlib": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.tizen.clrlib.js",
+		"name": "jquery.mobile.tizen.clrlib",
+		"depends": [
+			"util/ensurens"
+		],
+		"label": "Color library",
+		"group": "Tizen:Core",
+		"description": "Color code converter"
+	},
+	"jquery.mobile.support": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.support.js",
+		"name": "jquery.mobile.support",
+		"depends": [
+			"jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.media",
+			"jquery.mobile.support.touch",
+			"jquery.mobile.support.orientation"
+		],
+		"label": "Support Tests",
+		"group": "Core",
+		"description": "Assorted tests to qualify browsers by detecting features"
+	},
+	"jquery.mobile.tizen.scrollview": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.tizen.scrollview.js",
+		"name": "jquery.mobile.tizen.scrollview",
+		"depends": [],
+		"label": "Scrollview",
+		"group": "Tizen:Core",
+		"description": "Implements scroll by javascript"
+	},
+	"jquery.mobile.vmouse": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.vmouse.js",
+		"name": "jquery.mobile.vmouse",
+		"depends": [
+			"jquery"
+		],
+		"label": "Virtual Mouse (vmouse) Bindings",
+		"group": "Core",
+		"description": "Normalizes touch/mouse events."
+	},
+	"util/range": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "util/range.js",
+		"name": "util/range",
+		"depends": [],
+		"label": "Range",
+		"group": "Tizen:Utilities",
+		"description": "Makes array with given range"
+	},
+	"util/ensurens": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "util/ensurens.js",
+		"name": "util/ensurens",
+		"depends": [],
+		"label": "Ensurens",
+		"group": "Tizen:Utilities",
+		"description": "Make namespace for modules"
+	},
+	"jquery.mobile.zoom": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.zoom.js",
+		"name": "jquery.mobile.zoom",
+		"depends": [
+			"jquery",
+			"jquery.mobile.core"
+		],
+		"label": "Zoom Handling",
+		"group": "Utilities",
+		"description": "Utility methods for enabling and disabling user scaling (pinch zoom)"
+	},
+	"jquery.mobile.define": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.define.js",
+		"name": "jquery.mobile.define",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"jquery.mobile.tizen.pinch": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.tizen.pinch.js",
+		"name": "jquery.mobile.tizen.pinch",
+		"depends": [
+			"jquery.mobile.core"
+		],
+		"label": "Tizen core",
+		"group": "Tizen:Core",
+		"description": "Tizen core library"
+	},
+	"jquery.mobile.fieldContain": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.fieldContain.js",
+		"name": "jquery.mobile.fieldContain",
+		"depends": [
+			"jquery"
+		],
+		"label": "Fieldcontainers",
+		"group": "Forms",
+		"description": "Styling to responsively position forms and labels based on screen width and add visual separation"
+	},
+	"depend": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "depend.js",
+		"name": "depend",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"jquery.mobile.grid": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.grid.js",
+		"name": "jquery.mobile.grid",
+		"depends": [
+			"jquery"
+		],
+		"label": "Grid Layouts (Columns)",
+		"group": "Widgets",
+		"description": "Applies classes for creating grid or column styling."
+	},
+	"jquery.mobile.docs": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.docs.js",
+		"name": "jquery.mobile.docs",
+		"depends": [
+			"depend!../docs/_assets/js/jqm-docs[jquery]"
+		],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"jquery.mobile.transitions": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.transitions.js",
+		"name": "jquery.mobile.transitions",
+		"depends": [
+			"transitions/flip",
+			"transitions/flow",
+			"transitions/pop",
+			"transitions/slide",
+			"transitions/slidedown",
+			"transitions/slidefade",
+			"transitions/slideup",
+			"transitions/turn"
+		],
+		"label": "All Transitions",
+		"group": "Transitions",
+		"description": "All the stock transitions"
+	},
+	"jquery.mobile.controlGroup": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.controlGroup.js",
+		"name": "jquery.mobile.controlGroup",
+		"depends": [
+			"jquery",
+			"jquery.mobile.buttonMarkup"
+		],
+		"label": "Controlgroups",
+		"group": "Forms",
+		"description": "Visually groups sets of buttons, checks, radios, etc."
+	},
+	"events/touch": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "events/touch.js",
+		"name": "events/touch",
+		"depends": [
+			"events/jquery",
+			"jquery.mobile.vmouse",
+			"jquery.mobile.support.touch"
+		],
+		"label": "touch",
+		"group": "Events",
+		"description": "Touch events: touchstart, touchmove, touchend, tap, taphold, swipe, swipeleft, swiperight, scrollstart, scrollstop"
+	},
+	"events/throttledresize": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "events/throttledresize.js",
+		"name": "events/throttledresize",
+		"depends": [
+			"events/jquery"
+		],
+		"label": "throttledresize",
+		"group": "Events",
+		"description": "Throttled resize event"
+	},
+	"events/orientationchange": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "events/orientationchange.js",
+		"name": "events/orientationchange",
+		"depends": [
+			"events/jquery",
+			"jquery.mobile.support.orientation",
+			"events/throttledresize"
+		],
+		"label": "orientationchange",
+		"group": "Events",
+		"description": "Orientation change event"
+	},
+	"jquery.mobile.buttonMarkup": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.buttonMarkup.js",
+		"name": "jquery.mobile.buttonMarkup",
+		"depends": [
+			"jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.vmouse"
+		],
+		"label": "Buttons: Link-based",
+		"group": "Forms",
+		"description": "Applies button styling to links"
+	},
+	"jquery.mobile.nojs": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.nojs.js",
+		"name": "jquery.mobile.nojs",
+		"depends": [
+			"jquery"
+		],
+		"label": "“nojs” Classes",
+		"group": "Utilities",
+		"description": "Adds class to make elements hidden to A grade browsers"
+	},
+	"jquery.mobile.links": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.links.js",
+		"name": "jquery.mobile.links",
+		"depends": [
+			"jquery"
+		],
+		"label": "Link Classes",
+		"group": "Utilities",
+		"description": "Adds classes to links."
+	},
+	"jquery.mobile.tizen.core": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.tizen.core.js",
+		"name": "jquery.mobile.tizen.core",
+		"depends": [
+			"jquery.mobile.core",
+			"jquery.mobile.tizen.configure",
+			"util/ensurens"
+		],
+		"label": "Tizen core",
+		"group": "Tizen:Core",
+		"description": "Tizen core library"
+	},
+	"transitions/turn": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/turn.js",
+		"name": "transitions/turn",
+		"depends": [
+			"transitions/jquery",
+			"jquery.mobile.transition"
+		],
+		"label": "Turn Transition",
+		"group": "Transitions",
+		"description": "Animation styles and fallback transitions definition for non-3D supporting browsers"
+	},
+	"transitions/slide": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/slide.js",
+		"name": "transitions/slide",
+		"depends": [
+			"transitions/jquery",
+			"jquery.mobile.transition"
+		],
+		"label": "Slide Transition",
+		"group": "Transitions",
+		"description": "Animation styles and fallback transitions definition for non-3D supporting browsers"
+	},
+	"transitions/pop": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/pop.js",
+		"name": "transitions/pop",
+		"depends": [
+			"transitions/jquery",
+			"jquery.mobile.transition"
+		],
+		"label": "Pop Transition",
+		"group": "Transitions",
+		"description": "Animation styles and fallback transitions definition for non-3D supporting browsers"
+	},
+	"transitions/slideup": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/slideup.js",
+		"name": "transitions/slideup",
+		"depends": [
+			"transitions/jquery",
+			"jquery.mobile.transition"
+		],
+		"label": "Slideup Transition",
+		"group": "Transitions",
+		"description": "Animation styles and fallback transitions definition for non-3D supporting browsers"
+	},
+	"transitions/flow": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/flow.js",
+		"name": "transitions/flow",
+		"depends": [
+			"transitions/jquery",
+			"jquery.mobile.transition"
+		],
+		"label": "Flow Transition",
+		"group": "Transitions",
+		"description": "Animation styles and fallback transitions definition for non-3D supporting browsers"
+	},
+	"transitions/slidefade": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/slidefade.js",
+		"name": "transitions/slidefade",
+		"depends": [
+			"transitions/jquery",
+			"jquery.mobile.transition"
+		],
+		"label": "Slidefade Transition",
+		"group": "Transitions",
+		"description": "Animation styles and fallback transitions definition for non-3D supporting browsers"
+	},
+	"transitions/flip": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/flip.js",
+		"name": "transitions/flip",
+		"depends": [
+			"transitions/jquery",
+			"jquery.mobile.transition"
+		],
+		"label": "Flip Transition",
+		"group": "Transitions",
+		"description": "Animation styles and fallback transitions definition for non-3D supporting browsers"
+	},
+	"transitions/slidedown": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/slidedown.js",
+		"name": "transitions/slidedown",
+		"depends": [
+			"transitions/jquery",
+			"jquery.mobile.transition"
+		],
+		"label": "Slidedown Transition",
+		"group": "Transitions",
+		"description": "Animation styles and fallback transitions definition for non-3D supporting browsers"
+	},
+	"jquery.mobile.tizen.configure": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.tizen.configure.js",
+		"name": "jquery.mobile.tizen.configure",
+		"depends": [],
+		"label": "Configuration",
+		"group": "Tizen:Core",
+		"description": "jQuery Mobile configuration for Tizen widgets"
+	},
+	"jquery.mobile.tizen.loader": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.tizen.loader.js",
+		"name": "jquery.mobile.tizen.loader",
+		"depends": [
+			"jquery.mobile.tizen.core"
+		],
+		"label": "Loader",
+		"group": "Tizen:Core",
+		"description": "Loader doing theme loading, viewport setting, globalize loading, etc."
+	},
+	"jquery.mobile.transition": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.transition.js",
+		"name": "jquery.mobile.transition",
+		"depends": [
+			"jquery",
+			"jquery.mobile.core"
+		],
+		"label": "Transition Core",
+		"group": "Transitions",
+		"description": "Animated page change core logic and sequence handlers"
+	},
+	"jquery.mobile.zoom.iosorientationfix": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.zoom.iosorientationfix.js",
+		"name": "jquery.mobile.zoom.iosorientationfix",
+		"depends": [
+			"jquery",
+			"jquery.mobile.core",
+			"jquery.mobile.zoom"
+		],
+		"label": "iOS Orientation Change Fix",
+		"group": "Utilities",
+		"description": "Fixes the orientation change bug in iOS when switching between landspace and portrait"
+	},
+	"jquery.mobile.core": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.core.js",
+		"name": "jquery.mobile.core",
+		"depends": [
+			"jquery",
+			"text!../version.txt"
+		],
+		"label": "Core",
+		"group": "Core",
+		"description": "Base file for jQuery Mobile"
+	},
+	"jquery.mobile.label": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "jquery.mobile.label.js",
+		"name": "jquery.mobile.label",
+		"depends": [],
+		"label": "Label",
+		"group": "Tizen:Core",
+		"description": "Add markup for labels"
+	},
+	"require": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "require",
+		"name": "require",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"widgets/jquery": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/jquery",
+		"name": "widgets/jquery",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"widgets/depend!../jquery.hashchange[jquery]": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/depend!../jquery.hashchange[jquery]",
+		"name": "widgets/depend!../jquery.hashchange[jquery]",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"widgets/forms/jquery": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "widgets/forms/jquery",
+		"name": "widgets/forms/jquery",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"depend!./jquery.hashchange[jquery]": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "depend!./jquery.hashchange[jquery]",
+		"name": "depend!./jquery.hashchange[jquery]",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"depend!./jquery.ui.widget[jquery]": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "depend!./jquery.ui.widget[jquery]",
+		"name": "depend!./jquery.ui.widget[jquery]",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"depend!../docs/_assets/js/jqm-docs[jquery]": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "depend!../docs/_assets/js/jqm-docs[jquery]",
+		"name": "depend!../docs/_assets/js/jqm-docs[jquery]",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"events/jquery": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "events/jquery",
+		"name": "events/jquery",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"transitions/jquery": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "transitions/jquery",
+		"name": "transitions/jquery",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	},
+	"text!../version.txt": {
+		"basedir": "/var/www/rsa_release/test/web-ui-fw/build/tizen-web-ui-fw/0.2/js/src",
+		"path": "text!../version.txt",
+		"name": "text!../version.txt",
+		"depends": [],
+		"label": "",
+		"group": "",
+		"description": ""
+	}
+}
