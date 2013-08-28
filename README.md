@@ -116,7 +116,8 @@ lib/
 
 
 mobile-spec:
-	TizenCordovaMobileSpec/
+	samples/
+	  TizenCordovaMobileSpec/
 		mobile-spec adapted to TIZEN SDK 2.2
 	
     notifications/index.html is loading the cordova-tizen.css file for notifications
