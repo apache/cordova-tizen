@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.virtuallist" displayName="Virtual List"
+	smallIcon="virtuallist_small.png" icon.16="virtuallist_16.png"
+	category="Dynamic List"
+	description="The virtual list widget is used to display a list of unlimited data elements on the screen for better performance. This widget provides easy access to databases to retrieve and display data"
+	helpCategory="Tizen_Widget"
+	helpContents="virtuallist"
+	borderVisible="false">
+
+	<property name="id"            type="string"  displayName="ID"       default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="data-template" type="string"  displayName="Template" default=""/>
+	<property name="data-row"      type="integer" displayName="Row"      default="100"/>
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.virtuallist">
+			<ul data-role="virtuallistview">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</ul>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.virtualgrid" displayName="Virtual Grid"
+	smallIcon="virtualgrid_small.png" icon.16="virtualgrid_16.png"
+	category="Content"
+	description="The virtual grid widget is used to display a list of unlimited data elements on the screen for better performance. This widget displays the data in the grid format by reusing the existing grid control space"
+	helpCategory="Tizen_Widget"
+	helpContents="virtualgrid"
+	borderVisible="false">
+
+	<property name="id"             type="string"  displayName="ID"        default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="data-template"  type="string"  displayName="Template"  default=""/>
+	<property name="data-direction" type="tizen.virtualgrid@direction" displayName="Direction" default="y"/>
+	<property name="data-rotation"  type="boolean" displayName="Rotation"  default="false"/>
+	<property name="data-itemcount" type="string"  displayName="Itemcount" default="1"/>
+
+	<event name="onscrollstart" displayName="ScrollStart" eventType="event.defaultevent" />
+	<event name="onscrollupdate" displayName="ScrollUpdate" eventType="event.defaultevent" />
+	<event name="onscrollstop" displayName="ScrollStop" eventType="event.defaultevent" />
+	<event name="onselect" displayName="Select" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.virtualgrid">
+			<div data-role="virtualgrid">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

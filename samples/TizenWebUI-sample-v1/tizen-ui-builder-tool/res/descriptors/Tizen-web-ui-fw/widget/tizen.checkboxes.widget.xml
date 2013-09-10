@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.checkboxes" displayName="Check Boxes"
+	smallIcon="checkboxes_small.png" icon.16="checkboxes_16.png"
+	category="Form Elements"
+	description="The check boxes widget shows on the screen a list of options where one or more can be selected."
+	helpCategory="Tizen_Widget"
+	helpContents="checkboxes"
+	feedbackHeight="25" borderVisible="true"
+	guideText="Drop a Check Box Item">
+
+	<relations>
+		<content ids="tizen.checkboxitem"/>
+	</relations>
+
+	<property name="id"   type="string" displayName="ID"   default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text" type="string" displayName="Text" default="" initValue="Choose:"/>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% .ui-controlgroup-label"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id% .ui-controlgroup-label"/>
+		<property name="text-align" type="css-text-align" displayName="Text Align" selector="#%id% .ui-controlgroup-label"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id% .ui-controlgroup-label"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% .ui-controlgroup-label"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id% .ui-controlgroup-label"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% .ui-controlgroup-label"/>
+	</property>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<!-- <event name="oncreate" displayName="Create" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.checkboxes">
+			<div data-role="fieldcontain">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+				<fieldset data-role="controlgroup" data-type="vertical">
+					<xsl:if test="@text[string-length(.) > 0]">
+						<legend>
+							<xsl:value-of select="@text"/>
+						</legend>
+					</xsl:if>
+					<xsl:apply-templates select="html.text"/>
+					<xsl:apply-templates select="tizen.checkboxitem"/>
+				</fieldset>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

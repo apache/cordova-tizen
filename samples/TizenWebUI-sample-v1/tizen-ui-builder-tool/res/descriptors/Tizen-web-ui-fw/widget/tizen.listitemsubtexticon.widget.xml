@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.listitemsubtexticon" displayName="Subtext Icon"
+	smallIcon="listitemsubtexticon_small.png" icon.16="listitemsubtexticon_16.png"
+	category="List"
+	description="This widget can be used in the list item subtext."
+	helpCategory="Tizen_Widget"
+	helpContents="list"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.listitemsubtextone"/>
+	</relations>
+
+	<property name="id"  type="string" displayName="ID"    default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="src" type="image"  displayName="Src"   default=""/>
+	<property name="group-border" type="group" displayName="Border Style" default="">
+		<property name="border-width" type="style@size" displayName="Width" selector="#%id%">
+			<condition name="integer-max" value="999" error="integer-max"/>
+		</property>
+		<property name="border-color" type="css-color" displayName="Color" selector="#%id%"/>
+		<property name="border-style" type="border@style" displayName="Style" selector="#%id%"/>
+	</property>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<!-- <event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.listitemsubtexticon">
+			<img class="ui-li-icon-sub">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</img>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

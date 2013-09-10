@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.galleryitem" displayName="Gallery Item"
+	smallIcon="image_small.png" icon.16="image_16.png"
+	category="Content"
+	description="This widget can be used only in the gallery widget"
+	helpCategory="Tizen_Widget"
+	helpContents="galleryitem"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.gallery"/>
+	</relations>
+
+	<property name="id"  type="string" displayName="ID"  default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="src" type="image"  displayName="Src" default=""/>
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.galleryitem">
+			<img>
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+				<xsl:apply-templates select="@src" mode="simple-property"/>
+			</img>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

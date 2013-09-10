@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="html.textinput" displayName="Text Input"
+	smallIcon="textinput_small.png" icon.16="textinput_16.png"
+	category="HTML,Form Elements"
+	description="This widget is a standard HTML widget."
+	helpCategory="Tizen_Html"
+	helpContents=""
+	borderVisible="false">
+
+	<property name="id"          type="string"          displayName="ID"           default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="type"        type="html.input@type" displayName="Input Type"   default="text"/>
+	<property name="name"        type="string"          displayName="Name"         default=""/>
+	<property name="placeholder" type="string"          displayName="Placeholder"  default=""/>
+	<property name="group-text-placeholder" type="group-text" displayName="Placeholder Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%::-webkit-input-placeholder"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%::-webkit-input-placeholder"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id%::-webkit-input-placeholder"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%::-webkit-input-placeholder"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%::-webkit-input-placeholder"/>
+	</property>
+	<property name="value"       type="string"          displayName="Initial Text" default=""/>
+	<property name="group-text" type="group-text" displayName="Initial Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id%"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%"/>
+	</property>
+	<property name="group-border" type="group" displayName="Border Style" default="">
+		<property name="border-width" type="style@size" displayName="Width" selector="#%id%">
+			<condition name="integer-max" value="999" error="integer-max"/>
+		</property>
+		<property name="border-color" type="css-color" displayName="Color" selector="#%id%"/>
+		<property name="border-style" type="border@style" displayName="Style" selector="#%id%"/>
+	</property>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<event name="oncreate" displayName="Create" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="html.textinput">
+			<input>
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</input>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

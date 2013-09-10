@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.header" displayName="Header"
+	smallIcon="header_small.png" icon.16="header_16.png"
+	category="Toolbars"
+	description="The header widget is used to set the default bar at the top of the page."
+	helpCategory="Tizen_Widget"
+	helpContents="header"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.page" />
+		<content ids="tizen.tabbar" max="1"/>
+		<content ids="tizen.headerbutton" max="2"/>
+		<content ids="tizen.searchfilterbar" max="1"/>
+	</relations>
+
+	<condition name="change-property-by-child-add" value="tizen.tabbar" target="text2" targetValue=""/>
+	<condition name="change-property-by-child-add" value="tizen.searchfilterbar" target="text2" targetValue=""/>
+
+	<property name="id"            type="string"         displayName="ID"       default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text"          type="string"         displayName="Text"     default="" initValue="Header"/>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% h1"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id% h1"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% h1"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id% h1"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% h1"/>
+	</property>
+	<property name="text2"         type="string"         displayName="Multiline Text" default="">
+		<condition name="disable-property-by-child" value="tizen.tabbar"/>
+		<condition name="disable-property-by-child" value="tizen.searchfilterbar"/>
+	</property>
+	<property name="group-text2" type="group-text" displayName="Multiline Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% .ui-title-text-sub"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id% .ui-title-text-sub"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% .ui-title-text-sub"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id% .ui-title-text-sub"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% .ui-title-text-sub"/>
+	</property>
+	<property name="data-position" type="tizen@position" displayName="Position" default="fixed"/>
+
+	<property name="icon-id" type="string" displayName="ID"    default="" category="Icon"/>
+	<property name="src"     type="image"  displayName="Src"   default="" category="Icon"/>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<!-- <event name="oncreate" displayName="Create" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.header">
+			<div data-role="header">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+				<xsl:apply-templates select="@data-position" mode="simple-property"/>
+
+				<xsl:if test="string-length(@src) != 0">
+					<img>
+						<xsl:attribute name="id">
+							<xsl:value-of select="@icon-id"/>
+						</xsl:attribute>
+						<xsl:apply-templates select="@src" mode="simple-property"/>
+					</img>
+				</xsl:if>
+
+				<xsl:if test="string-length(@text) > 0">
+					<h1>
+						<xsl:value-of select="@text"/>
+					</h1>
+				</xsl:if>
+
+				<xsl:if test="string-length(@text2) > 0">
+					<span class="ui-title-text-sub">
+						<xsl:value-of select="@text2"/>
+					</span>
+				</xsl:if>
+
+				<xsl:apply-templates select="tizen.headerbutton"/>
+				<xsl:apply-templates select="tizen.tabbar"/>
+				<xsl:apply-templates select="tizen.searchfilterbar"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

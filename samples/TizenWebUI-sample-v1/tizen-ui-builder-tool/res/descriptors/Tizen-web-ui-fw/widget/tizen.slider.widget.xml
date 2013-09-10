@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.slider" displayName="Slider"
+	smallIcon="slider_small.png" icon.16="slider_16.png"
+	category="Form Elements"
+	description="The slider widget is used to change values by dragging a handle."
+	helpCategory="Tizen_Widget"
+	helpContents="slider"
+	borderVisible="false">
+
+	<property name="id"              type="string"            displayName="ID"         default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="name"            type="string"            displayName="Name"       default=""/>
+	<property name="value"           type="integer"           displayName="Value"      default="5">
+		<condition name="integer-min-by" value="min" error="integer-min-by"/>
+		<condition name="integer-max-by" value="max" error="integer-max-by"/>
+	</property>
+	<property name="group-text-value" type="group-text" displayName="Value Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%+div a .ui-btn-text"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id%+div a .ui-btn-text"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%+div a .ui-btn-text"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%+div a .ui-btn-text"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%+div a .ui-btn-text"/>
+	</property>
+	<property name="min"             type="integer"           displayName="Min"        default="0">
+		<condition name="integer-min" value="-999" error="integer-min"/>
+		<condition name="integer-max-by" value="value" error="integer-max-by"/>
+	</property>
+	<property name="max"             type="integer"           displayName="Max"        default="10">
+		<condition name="integer-max" value="999" error="integer-max"/>
+		<condition name="integer-min-by" value="value" error="integer-min-by"/>
+	</property>
+	<property name="data-icon"       type="tizen.slider@icon" displayName="Icon"       default=""
+		tooltip="Defines the icon style for the slider ends">
+		<condition name="enable-property" value="text" target="data-text-left"/>
+		<condition name="enable-property" value="text" target="data-text-right"/>
+		<condition name="enable-property" value="text" target="group-text-left"/>
+		<condition name="enable-property" value="text" target="group-text-right"/>
+	</property>
+	<property name="data-text-left"  type="string"            displayName="Left Text"  default=""
+		tooltip="Defines the text displayed on the left side of the slider">
+		<condition name="string-max-length" value="3" error="string-max-length"/>
+	</property>
+	<property name="group-text-left" type="group-text" displayName="Left Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%+div .ui-slider-left-text"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%+div .ui-slider-left-text"/>
+		<property name="text-align" type="css-text-align" displayName="Text Align" selector="#%id%+div .ui-slider-left-text"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id%+div .ui-slider-left-text"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%+div .ui-slider-left-text"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%+div .ui-slider-left-text"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%+div .ui-slider-left-text"/>
+	</property>
+	<property name="data-text-right" type="string"            displayName="Right Text" default=""
+		tooltip="Defines the text displayed on the right side of the slider">
+		<condition name="string-max-length" value="3" error="string-max-length"/>
+	</property>
+	<property name="group-text-right" type="group-text" displayName="Right Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%+div .ui-slider-right-text"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%+div .ui-slider-right-text"/>
+		<property name="text-align" type="css-text-align" displayName="Text Align" selector="#%id%+div .ui-slider-right-text"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id%+div .ui-slider-right-text"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%+div .ui-slider-right-text"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%+div .ui-slider-right-text"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%+div .ui-slider-right-text"/>
+	</property>
+	<property name="data-popup"      type="boolean"           displayName="Popup"      default="true"
+		tooltip="Enables or disables a pop-up showing the current value while the handle is dragged"/>
+	<property name="data-highlight"  type="boolean"           displayName="Highlight"  default="true"/>
+
+	<!-- <event name="ontap" displayName="Tap" eventType="event.defaultevent" /> 
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" /> -->
+	<event name="onupdate" displayName="Update" eventType="event.defaultevent" />
+	<event name="onchange" displayName="Change" eventType="event.defaultevent" />
+	<!-- <event name="oncreate" displayName="Create" eventType="event.defaultevent" />
+	<event name="onblur" displayName="Blur" eventType="event.defaultevent" />
+	<event name="onchange" displayName="Change" eventType="event.defaultevent" />
+	<event name="onfocus" displayName="Focus" eventType="event.defaultevent" />
+	<event name="onreset" displayName="Reset" eventType="event.defaultevent" />
+	<event name="onselect" displayName="Select" eventType="event.defaultevent" />
+	<event name="onsubmit" displayName="Submit" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.slider">
+			<input type="range">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</input>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

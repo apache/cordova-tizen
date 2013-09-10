@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page id="tizen.page" displayName="Page" icon.16="page_16.png">
+
+	<relations>
+		<content ids="tizen.header" max="1"/>
+		<content ids="tizen.content" min="1" max="1"/>
+		<content ids="tizen.footer" max="1"/>
+	</relations>
+
+	<property name="id"                type="string"  displayName="ID"          default="" category="Common">
+		<condition name="string-id" error="string-page-id"/>
+	</property>
+	<property name="data-add-back-btn" type="boolean" displayName="Back Button" default="false" notsupported="true">
+		<condition name="enable-property-by-child" value="tizen.footer"/>
+	</property>
+	<property name="data-dom-cache"    type="boolean" displayName="Dom Cache"   default="false"/>
+	<property name="data-title"        type="string"  displayName="Title"       default=""/>
+
+	<event name="onpagebeforecreate" displayName="PageBeforeCreate" eventType="event.pageevent" />
+	<event name="onpagecreate" displayName="PageCreate" eventType="event.pageevent" />
+	<event name="onpageinit" displayName="PageInit" eventType="event.pageevent" />
+	<event name="onpagebeforehide" displayName="PageBeforeHide" eventType="event.pageevent" />
+	<event name="onpagehide" displayName="PageHide" eventType="event.pageevent" />
+	<event name="onpagebeforeshow" displayName="PageBeforeShow" eventType="event.pageevent" />
+	<event name="onpageshow" displayName="PageShow" eventType="event.pageevent" />
+	<event name="onpageremove" displayName="PageRemove" eventType="event.pageevent" />
+	<event name="onupdatelayout" displayName="UpdateLayout" eventType="event.pageevent" /> 
+
+	<xsl-for-output>
+		<xsl:template match="tizen.page">
+			<div data-role="page">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+				<xsl:apply-templates select="*"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</page>

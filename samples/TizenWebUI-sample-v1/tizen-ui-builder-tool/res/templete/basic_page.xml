@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tizenFile>
+    <fileInfo>
+        <type>tizen-page-templete</type>
+        <version>0.0.1</version>
+        <desc>Tizen Web UI Builder Page Templete</desc>
+    </fileInfo>
+  <page.templte>
+    <title>Basic Page</title>
+    <image src="basic_page.png" />
+    <files>
+      <file type="page" src="basic_page.page" />
+      <file type="custom" src="basic_page.js" />
+      <file type="custom" src="basic_page.css" />
+    </filse>
+  </page.templte>
+</tizenFile>

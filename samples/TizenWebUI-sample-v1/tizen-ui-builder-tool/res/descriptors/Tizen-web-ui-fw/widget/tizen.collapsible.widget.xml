@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.collapsible" displayName="Collapsible"
+	smallIcon="collapsible_small.png" icon.16="collapsible_16.png"
+	category="Content"
+	description="Create a Collapsible"
+	helpCategory="Tizen_Widget"
+	helpContents="collapsible"
+	borderVisible="false">
+
+	<content type="widget" exclude-ids="tizen.header,tizen.footer"/>
+
+	<property name="id"             type="string"  displayName="ID"        default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text"           type="string"  displayName="Text"      default="" initValue="Section Header"/>
+	<property name="data-collapsed" type="boolean" displayName="Collapsed" default="" initValue="false"/>
+	<property name="data-content-theme" type="tizen@theme" displayName="Content theme" default="" notsupported="true"/>
+	<property name="data-iconpos" type="tizen@iconpos" displayName="Icon Position" default="" notsupported="true"/>
+	<property name="theme" type="tizen@theme" displayName="Theme" default="" notsupported="true"/>
+	<property name="mini" type="boolean" displayName="Mini" default="false" notsupported="true"/>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<event name="oncreate" displayName="Create" eventType="event.defaultevent" />
+	<event name="oncollapse" displayName="Collapse" eventType="event.defaultevent" />
+	<event name="onexpand" displayName="Expand" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.collapsible">
+			<div data-role="collapsible">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*[name() != 'text']" mode="simple-property"/>
+				<h3>
+					<xsl:value-of select="@text"/>
+				</h3>
+				<xsl:apply-templates select="*[name() != 'tizen.header' and name() != 'tizen.footer']"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

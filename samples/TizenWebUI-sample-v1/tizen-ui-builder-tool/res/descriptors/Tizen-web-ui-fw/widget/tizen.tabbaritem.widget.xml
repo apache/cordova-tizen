@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.tabbaritem" displayName="Tabbar Item"
+	smallIcon="tabbaritem_small.png" icon.16="tabbaritem_16.png"
+	category="Toolbars"
+	description="This widget can be used only in the tabbar widget."
+	helpCategory="Tizen_Widget"
+	helpContents="tabbar"
+	feedbackWidth="100%" feedbackHeight="66" borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.tabbar"/>
+	</relations>
+
+	<property name="id"   type="string" displayName="ID"      default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text" type="string" displayName="Text"    default="" initValue="Tabbar Item"/>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% .ui-btn-text"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id% .ui-btn-text"/>
+		<property name="text-align" type="css-text-align" displayName="Text Align" selector="#%id%"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% .ui-btn-text"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id% .ui-btn-text"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% .ui-btn-text"/>
+	</property>
+	<property name="href"  type="url"    displayName="Link To" default=""/>
+	<property name="class" type="tizen.tabbaritem@class" displayName="Active" default="">
+		<condition name="change-other-property-by-parent" value="ui-btn-active" target="tizen.tabbar" targetValue=""/>
+	</property>
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.tabbaritem">
+			<li>
+				<xsl:call-template name="print-part-id"/>
+				<a>
+					<xsl:apply-templates select="@*[name() != 'text']" mode="simple-property"/>
+					<xsl:value-of select="@text"/>
+				</a>
+			</li>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

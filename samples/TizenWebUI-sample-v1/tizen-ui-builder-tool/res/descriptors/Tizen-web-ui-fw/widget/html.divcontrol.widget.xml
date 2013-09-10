@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="html.divcontrol" displayName="Div Control"
+	smallIcon="divcontrol_small.png" icon.16="divcontrol_16.png"
+	category="HTML"
+	description="This widget is a standard HTML widget."
+	helpCategory="Tizen_Html"
+	helpContents=""
+	feedbackHeight="65" borderVisible="true"
+	guideText="Drop any widget"
+	setStyle="true">
+
+	<relations>
+		<content type="widget"/>
+		<nocontent ids="tizen.header,tizen.footer,tizen.tabbar,tizen.searchfilterbar"/>
+	</relations>
+
+	<property name="id"  type="string" displayName="ID" default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="group-position" type="group-position" displayName="Position" default="" category="Layout">
+		<property name="position" type="position@position" displayName="Position" selector="#%id%" default="relative">
+			<condition name="enable-property" value="absolute" target="left"/>
+			<condition name="enable-property" value="absolute" target="top"/>
+		</property>
+		<property name="left" type="style@size" displayName="Left" selector="#%id%"/>
+		<property name="top" type="style@size" displayName="Top" selector="#%id%"/>
+		<property name="width" type="style@size" displayName="Width" selector="#%id%"/>
+		<property name="height" type="style@size" displayName="Height" selector="#%id%"/>
+	</property>
+	<property name="style"     type="string"         displayName="Style"     default="overflow: hidden;"/>
+
+	<!-- global attribute -->
+	<!-- <property name="accesskey"       type="string"  	displayName="Accesskey"       default="">
+		<condition name="string-max-length" value="1" error="string-max-length"/>
+	</property> -->
+	<property name="class"           type="string"         displayName="Class"           default=""/>
+	<!-- <property name="contenteditable" type="boolean"        displayName="Contenteditable" default=""/>
+	<property name="contextmenu"     type="string"         displayName="Contextmenu"     default=""/>
+	<property name="dir"             type="html@dir"       displayName="Dir"             default=""/>
+	<property name="draggable"       type="html@draggable" displayName="Draggable"       default=""/>
+	<property name="dropzone"        type="html@dropzone"  displayName="Dropzone"        default=""/>
+	<property name="hidden"          type="string"         displayName="Hidden"          default=""/>
+	<property name="lang"            type="html@lang"      displayName="Lang"            default="en"/>
+	<property name="spellcheck"      type="boolean"        displayName="Spellcheck"      default=""/>
+	<property name="tabindex"        type="integer"        displayName="Tabindex"        default=""/>
+	<property name="title"           type="string"         displayName="Title"           default=""/> -->
+	<!-- global attribute -->
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="html.divcontrol">
+			<div>
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+				<xsl:apply-templates select="@*"  mode="simple-property"/>
+				<xsl:apply-templates select="*[name() != 'tizen.header' and name() != 'tizen.footer' and name() != 'tizen.tabbar' and name() != 'tizen.searchfilterbar']"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

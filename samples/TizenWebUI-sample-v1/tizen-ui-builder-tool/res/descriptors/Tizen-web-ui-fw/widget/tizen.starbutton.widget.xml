@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.starbutton" displayName="Star Button"
+	smallIcon="starbutton_small.png" icon.16="starbutton_16.png"
+	category="Buttons"
+	description="The star button widget shows on the screen a control that you can use to generate an action event when pressed and released."
+	helpCategory="Tizen_Widget"
+	helpContents="button"
+	borderVisible="false">
+
+	<property name="id"         type="string" displayName="ID"    default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="data-style" type="tizen.starbutton@style" displayName="Style" default=""
+		tooltip="It applies different styles of button"/>
+	<property name="group-border-inner" type="group" displayName="Inner Border Style" default="">
+		<property name="border-width" type="style@size" displayName="Width" selector="#%id% .ui-btn-inner">
+			<condition name="integer-max" value="999" error="integer-max"/>
+		</property>
+		<property name="border-color" type="css-color" displayName="Color" selector="#%id% .ui-btn-inner"/>
+		<property name="border-style" type="border@style" displayName="Style" selector="#%id% .ui-btn-inner"/>
+	</property>
+	<property name="group-border-outer" type="group" displayName="Outer Border Style" default="">
+		<property name="border-width" type="style@size" displayName="Width" selector="#%id%">
+			<condition name="integer-max" value="999" error="integer-max"/>
+		</property>
+		<property name="border-color" type="css-color" displayName="Color" selector="#%id%"/>
+		<property name="border-style" type="border@style" displayName="Style" selector="#%id%"/>
+	</property>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.starbutton">
+			<div data-role="button" data-corners="false" data-icon="star" data-iconpos="left" data-inline="true">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

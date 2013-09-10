@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="html.link" displayName="Link"
+	smallIcon="link_small.png" icon.16="link_16.png"
+	category="HTML"
+	description="This widget is a standard HTML widget."
+	helpCategory="Tizen_Html"
+	helpContents=""
+	borderVisible="false">
+
+	<property name="id"              type="string"               displayName="ID"         default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text"            type="string"               displayName="Text"       default="" initValue="Link"/>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%">
+			<condition name="disable-property-by-value" value="underline"/>
+		</property>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%"/>
+	</property>
+	<property name="href"            type="url"                  displayName="Link To"    default=""/>
+	<!-- <property name="data-ajax"       type="boolean"              displayName="Ajax"       default="true"/> -->
+	<property name="data-direction"  type="html.link@direction"  displayName="Direction"  default=""/>
+	<property name="data-dom-cache"  type="boolean"              displayName="DOM Cache"  default="false"/>
+	<property name="data-prefetch"   type="html.link@prefetch"   displayName="Prefetch"   default=""/>
+	<!-- <property name="data-rel"        type="html.link@rel"        displayName="Rel"        default=""/> -->
+	<property name="data-transition" type="html.link@transition" displayName="Transition" default="slide"/>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="html.link">
+			<a data-ajax="true">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*[name() != 'text' and name() != 'data-prefetch']" mode="simple-property"/>
+				<xsl:apply-templates select="@data-prefetch[string-length(.) > 0]" mode="simple-property"/>
+				<xsl:value-of select="@text"/>
+			</a>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+%meta%
+
+<base href="%page_path%/">
+
+<style type="text/css">
+body { 
+  margin:0; overflow:hidden; 
+	-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none;
+	-moz-user-select: none; -ms-user-select: none; user-select: none; }
+	overflow: hidden;
+}
+</style>
+<!-- 
+<script src="%tool_path%/jq/json2.js"></script>
+<script src="%root_path%/tizen-web-ui-fw/latest/js/jquery.js"></script>
+<script src="%root_path%/tizen-web-ui-fw/latest/js/tizen-web-ui-fw-libs.js"></script>
+<script src="%root_path%/tizen-web-ui-fw/latest/js/tizen-web-ui-fw.js" data-framework-theme="%framwork_theme%"></script>
+-->
+%framework%
+ 
+%style%
+
+<!--
+<link rel="stylesheet" type="text/css" href="%root_path%/app.css">
+-->
+
+<link rel="stylesheet" type="text/css" href="%page_css_path%">
+
+<style type="text/css" id="page_managed_style">
+%css%
+</style>
+
+<script>
+	$(document).ready(function() {
+		$(document).bind("selectstart.jq", function() { return false; });
+		$(document).css("KhtmlUserSelect", "none").get(0).unselectable = "on";
+	  	$("*").bind("selectstart", function(e) { e.preventDefault(); return true; });
+		$("*").bind("mousedown", function(e) { e.preventDefault(); return true; });
+		$("*").bind("mouseup", function(e) { e.preventDefault(); return true; });
+	});
+	
+	// setShowingSize: (width:int, height:int) -> ()
+	function setShowingSize(width, height) {
+		var dv = $("#preview");
+
+		if (width >= 0) {
+			dv.css("width", width);
+		}
+		if (height >= 0) {
+			dv.css("height", height);
+		}
+	}
+</script>
+</head>
+
+<body>
+%html%
+</body>
+
+</html>

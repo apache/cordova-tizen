@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE css [
+	<!ENTITY tizen.css.types SYSTEM "tizen.css.types.xml">
+]>
+
+<css>
+    <category name="Background">
+	    <property name="background" type="string" displayName="Background"></property>
+	    <property name="background-attachment" type="string" displayName="Attachment"></property>
+	    <property name="background-color" type="string" displayName="Color" default="#F8F6EF"></property>
+	    <property name="background-image" type="string" displayName="Image"></property>
+	    <property name="background-position" type="background@position" displayName="Position"></property>
+	    <property name="background-repeat" type="background@repeat" displayName="Repeat" default=""></property>
+	    <property name="background-clip" type="string" displayName="Clip"></property>
+	    <property name="background-origin" type="string" displayName="Origin"></property>
+	    <property name="background-size" type="string" displayName="Size"></property>
+    </category>
+    <category name="Border">
+        <property name="border" type="string" displayName="Border"></property>
+        <property name="border-bottom" type="string" displayName="Border Bottom"></property>
+        <property name="border-bottom-color" type="string" displayName="Border Bottom Color"></property>
+        <property name="border-bottom-style" type="string" displayName="Border Bottom Style"></property>
+        <property name="border-bottom-width" type="string" displayName="Border Bottom Width"></property>
+        <property name="border-color" type="string" displayName="Color" default="#000000"></property>
+        <property name="border-left" type="string" displayName="Border Left"></property>
+        <property name="border-left-color" type="string" displayName="Border Left Color"></property>
+        <property name="border-left-style" type="string" displayName="Border Left Style"></property>
+        <property name="border-left-width" type="string" displayName="Border Left Width"></property>
+        <property name="border-right" type="string" displayName="Border Right"></property>
+        <property name="border-right-color" type="string" displayName="Border Right Color"></property>
+        <property name="border-right-style" type="string" displayName="Border Right Style"></property>
+        <property name="border-right-width" type="string" displayName="Border Right Width"></property>
+        <property name="border-style" type="border@style" displayName="Style" default=""></property>
+        <property name="border-top" type="string" displayName="Border Top"></property>
+        <property name="border-top-color" type="string" displayName="Border Top Color"></property>
+        <property name="border-top-style" type="string" displayName="Border Top Style"></property>
+        <property name="border-top-width" type="string" displayName="Border Top Width"></property>
+        <property name="border-width" type="style@size" displayName="Width">
+        	<condition name="integer-max" value="999" error="integer-max"/>
+        </property>
+        <property name="border-bottom-left-radius" type="string" displayName="Border Bottom Left Radius"></property>
+        <property name="border-bottom-right-radius" type="string" displayName="Border Bottom Right Radius"></property>
+        <property name="border-image" type="string" displayName="Border Image"></property>
+        <property name="border-radius" type="string" displayName="Border Radius"></property>
+        <property name="border-top-left-radius" type="string" displayName="Border Top Left Radius"></property>
+        <property name="border-top-right-radius" type="string" displayName="Border Top Right Radius"></property>
+    </category>
+    <category name="Outline">
+        <property name="outline" type="string" displayName="Outline"></property>
+        <property name="outline-color" type="string" displayName="Outline Color"></property>
+        <property name="outline-style" type="string" displayName="Outline Style"></property>
+        <property name="outline-width" type="string" displayName="Outline Width"></property>
+    </category>
+    <category name="Box">
+        <property name="box-shadow" type="string" displayName="Box Shadow"></property>
+        <property name="overflow-x" type="string" displayName="Overflow X"></property>
+        <property name="overflow-y" type="string" displayName="Overflow Y"></property>
+        <property name="overflow-style" type="string" displayName="Overflow Style"></property>
+    </category>
+    <category name="Color">
+    	<property name="color" type="string" displayName="Color" default="#000000"></property>
+        <property name="opacity" type="string" displayName="Opacity"></property>
+    </category>
+    <category name="Dimension">
+        <property name="width" type="style@size" displayName="Width"></property>
+        <property name="height" type="style@size" displayName="Height"></property>
+        <property name="max-width" type="string" displayName="Max Width"></property>
+        <property name="max-height" type="string" displayName="Max Height"></property>
+        <property name="min-width" type="string" displayName="Min Width"></property>
+        <property name="min-height" type="string" displayName="Min Height"></property>
+    </category>
+    <category name="Flexible Box">
+        <property name="box-align" type="string" displayName="Box Align"></property>
+        <property name="box-direction" type="string" displayName="Box Direction"></property>
+        <property name="box-flex" type="string" displayName="Box Flex"></property>
+        <property name="box-ordinal-group" type="string" displayName="Box Ordinal Group"></property>
+        <property name="box-orient" type="string" displayName="Box Orient"></property>
+        <property name="box-pack" type="string" displayName="Box Pack"></property>
+    </category>
+    <category name="Font">
+        <property name="font" type="string" displayName="Font"></property>
+        <property name="font-family" type="font@family" displayName="Font Family"></property>
+        <property name="font-size" type="font@size" displayName="Font Size"></property>
+        <property name="font-style" type="string" displayName="Font Style"></property>
+        <property name="font-variant" type="string" displayName="Font Variant"></property>
+        <property name="font-weight" type="string" displayName="Font Weight"></property>
+        <property name="@font-face" type="string" displayName="Font Face"></property>
+    </category>
+    <category name="Generated Conetent">
+        <property name="content" type="string" displayName="Content"></property>
+        <property name="counter-increment" type="string" displayName="Counter Increment"></property>
+        <property name="counter-reset" type="string" displayName="Counter Reset"></property>
+        <property name="quotes" type="string" displayName="Quotes"></property>
+    </category>
+    <category name="List">
+        <property name="list-style" type="string" displayName="List Style"></property>
+        <property name="list-style-image" type="string" displayName="List Style Image"></property>
+        <property name="list-style-position" type="string" displayName="List Style Position"></property>
+        <property name="list-style-type" type="string" displayName="List Style Type"></property>
+    </category>
+    <category name="Margin">
+        <property name="margin" type="string" displayName="Margin"></property>
+        <property name="margin-bottom" type="style@size" displayName="Bottom"></property>
+        <property name="margin-left" type="style@size" displayName="Left"></property>
+        <property name="margin-right" type="style@size" displayName="Right"></property>
+        <property name="margin-top" type="style@size" displayName="Top"></property>
+    </category>
+    <category name="Multi Coloumn">
+        <property name="column-count" type="string" displayName="Column Count"></property>
+        <property name="column-gap" type="string" displayName="Column Gap"></property>
+        <property name="column-rule" type="string" displayName="Column Rule"></property>
+        <property name="column-rule-color" type="string" displayName="Column Rule Color"></property>
+        <property name="column-rule-style" type="string" displayName="Column Rule Style"></property>
+        <property name="column-rule-width" type="string" displayName="Column Rule Width"></property>
+        <property name="column-span" type="string" displayName="Column Span"></property>
+        <property name="column-width" type="string" displayName="Column Width"></property>
+        <property name="columns" type="string" displayName="Columns"></property>
+    </category>
+    <category name="Padding">
+        <property name="padding" type="string" displayName="Padding"></property>
+        <property name="padding-bottom" type="string" displayName="Padding Bottom"></property>
+        <property name="padding-left" type="string" displayName="Padding Left"></property>
+        <property name="padding-right" type="string" displayName="Padding Right"></property>
+        <property name="padding-top" type="string" displayName="Padding Top"></property>
+    </category>
+    <category name="Positioning">
+        <property name="bottom" type="string" displayName="Bottom"></property>
+        <property name="clear" type="string" displayName="Clear"></property>
+        <property name="clip" type="string" displayName="Clip"></property>
+        <property name="cursor" type="string" displayName="Cursor"></property>
+        <property name="display" type="string" displayName="Display"></property>
+        <property name="float" type="string" displayName="Float"></property>
+        <property name="left" type="string" displayName="Left"></property>
+        <property name="overflow" type="string" displayName="Overflow"></property>
+        <property name="position" type="string" displayName="Position"></property>
+        <property name="right" type="string" displayName="Right"></property>
+        <property name="top" type="string" displayName="Top"></property>
+        <property name="visibility" type="string" displayName="Visibility"></property>
+        <property name="z-index" type="string" displayName="Z-Index"></property>
+    </category>
+    <category name="Text">
+        <property name="color" type="string" displayName="Color" default="#000000"></property>
+        <property name="direction" type="string" displayName="Direction"></property>
+        <property name="letter-spacing" type="string" displayName="Letter Spacing"></property>
+        <property name="line-height" type="string" displayName="Line Height"></property>
+        <property name="text-align" type="string" displayName="Text Align"></property>
+        <property name="text-decoration" type="string" displayName="Text Decoration"></property>
+        <property name="text-indent" type="string" displayName="Text Indent"></property>
+        <property name="text-transform" type="string" displayName="Text Transform"></property>
+        <property name="vertical-align" type="string" displayName="Vertical Align"></property>
+        <property name="white-space" type="string" displayName="White Space"></property>
+        <property name="word-spacing" type="string" displayName="Word Spacing"></property>
+        <property name="text-justify" type="string" displayName="Text Justify"></property>
+        <property name="text-overflow" type="string" displayName="Text Overflow"></property>
+        <property name="text-shadow" type="string" displayName="Text Shadow"></property>
+        <property name="word-break" type="string" displayName="Word Break"></property>
+        <property name="word-wrap" type="string" displayName="Word Wrap"></property>
+    </category>
+    <category name="User Interface">
+        <property name="box-sizing" type="string" displayName="Box Sizing"></property>
+        <property name="outline-offset" type="string" displayName="Outline Offset"></property>
+    </category>
+    <!-- type & event type -->
+	&tizen.css.types;
+</css>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.progress" displayName="Progress"
+	smallIcon="progress_small.png" icon.16="progress_16.png"
+	category="Content,List"
+	description="The progress widget shows that an operation is in progress"
+	helpCategory="Tizen_Widget"
+	helpContents="progress"
+	borderVisible="false">
+
+	<property name="id"         type="string"               displayName="ID"    default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="data-style" type="tizen.progress@style" displayName="Style" default="pending"
+		tooltip="Sets the style of the progress widget"/>
+
+	<event name="onchange" displayName="Change" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.progress">
+			<div data-role="progressing">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

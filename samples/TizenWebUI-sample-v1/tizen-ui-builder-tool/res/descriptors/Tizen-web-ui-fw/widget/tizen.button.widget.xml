@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.button" displayName="Button"
+	smallIcon="button_small.png" icon.16="button_16.png"
+	category="Buttons,Toolbars"
+	description="The button widget shows on the screen a control that you can use to generate an action event when pressed and released."
+	helpCategory="Tizen_Widget"
+	helpContents="button"
+	borderVisible="false">
+
+	<condition name="change-property-by-parent" value="tizen.swipeitem" target="data-inline" targetValue="true"/>
+
+	<property name="id"              type="string"             displayName="ID"            default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text"            type="string"             displayName="Text"          default="" initValue="Button"/>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% span .ui-btn-text"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id% span"/>
+		<property name="text-align" type="css-text-align" displayName="Text Align" selector="#%id% span"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id% span .ui-btn-text"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% span .ui-btn-text"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id% span .ui-btn-text"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% span .ui-btn-text"/>
+	</property>
+	<property name="data-style"      type="tizen.button@style" displayName="Style"  default=""
+		tooltip="It applies different styles of button">
+		<condition name="disable-property-by-parent" value="tizen.footer"/>
+	</property>
+	<property name="data-icon"       type="tizen.button@icon"  displayName="Icon"          default=""
+		tooltip="Defines an icon for a button">
+		<condition name="disable-property" value="" target="data-iconpos"/>
+		<condition name="disable-property-by-parent" value="tizen.footer"/>
+	</property>
+	<property name="data-iconpos"    type="tizen@iconpos"      displayName="Icon Position" default="left"/>
+	<!-- <property name="data-iconshadow" type="boolean"            displayName="Icon Shadow"   default="true"  notsupported="true"/> -->
+	<property name="data-inline"     type="boolean"            displayName="Inline"        default="false">
+		<condition name="disable-property-by-parent" value="tizen.footer"/>
+		<condition name="disable-property-by-parent" value="tizen.listitem"/>
+		<condition name="disable-property-by-parent" value="tizen.swipeitem"/>
+	</property>
+	<property name="group-border-inner" type="group" displayName="Inner Border Style" default="">
+		<property name="border-width" type="style@size" displayName="Width" selector="#%id% .ui-btn-inner">
+			<condition name="integer-max" value="999" error="integer-max"/>
+		</property>
+		<property name="border-color" type="css-color" displayName="Color" selector="#%id% .ui-btn-inner"/>
+		<property name="border-style" type="border@style" displayName="Style" selector="#%id% .ui-btn-inner"/>
+	</property>
+	<property name="group-border-outer" type="group" displayName="Outer Border Style" default="">
+		<property name="border-width" type="style@size" displayName="Width" selector="#%id%">
+			<condition name="integer-max" value="999" error="integer-max"/>
+		</property>
+		<property name="border-color" type="css-color" displayName="Color" selector="#%id%"/>
+		<property name="border-style" type="border@style" displayName="Style" selector="#%id%"/>
+	</property>
+
+	<!-- <property name="data-shadow"     type="boolean"            displayName="Shadow"        default="true"  notsupported="true"/>
+	<property name="data-mini"       type="boolean"            displayName="Mini"          default="false" notsupported="true"/> -->
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<!-- <event name="oncreate" displayName="Create" eventType="event.defaultevent" />
+	<event name="onblur" displayName="Blur" eventType="event.defaultevent" />
+	<event name="onchange" displayName="Change" eventType="event.defaultevent" />
+	<event name="onfocus" displayName="Focus" eventType="event.defaultevent" />
+	<event name="onreset" displayName="Reset" eventType="event.defaultevent" />
+	<event name="onselect" displayName="Select" eventType="event.defaultevent" />
+	<event name="onsubmit" displayName="Submit" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.button">
+			<div data-role="button" data-corners="false">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*[name() != 'text' and name() != 'data-iconpos']" mode="simple-property"/>
+				<xsl:if test="string-length(@data-icon) != 0">
+					<xsl:apply-templates select="@data-iconpos" mode="simple-property"/>
+				</xsl:if>
+				<xsl:value-of select="@text"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<eventTypes>
+	<eventType id="event.defaultevent">
+		<defaultCode>%object%_%event%</defaultCode>
+		<param name="event" type="" />
+	</eventType>
+
+	<eventType id="event.pageevent">
+		<defaultCode>%event%</defaultCode>
+		<param name="event" type="" />
+	</eventType>
+</eventTypes>

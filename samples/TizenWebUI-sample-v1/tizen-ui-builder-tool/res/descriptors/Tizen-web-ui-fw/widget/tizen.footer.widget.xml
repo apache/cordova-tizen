@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.footer" displayName="Footer"
+	smallIcon="footer_small.png" icon.16="footer_16.png"
+	category="Toolbars"
+	description="The footer widget is used to set the default bar at the bottom of the page."
+	helpCategory="Tizen_Widget"
+	helpContents="footer"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.page" />
+		<content ids="tizen.button" max="2"/>
+	</relations>
+
+	<property name="id"            type="string"         displayName="ID"       default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<!-- <event name="oncreate" displayName="Create" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.footer">
+			<div data-role="footer">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*[name() != 'text']" mode="simple-property"/>
+
+				<xsl:apply-templates select="tizen.button"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<types>
+	<type id="background@position">
+		<constant value="" 		         	displayName="(None)" />
+		<constant value="left top"          displayName="left top" />
+		<constant value="left center" 		displayName="left center" />
+		<constant value="left bottom" 		displayName="left bottom" />
+		<constant value="right top" 		displayName="right top" />
+		<constant value="right center" 		displayName="right center" />
+		<constant value="right bottom" 		displayName="right bottom" />
+		<constant value="center top" 		displayName="center top" />
+		<constant value="center center" 	displayName="center center" />
+		<constant value="center bottom" 	displayName="center bottom" />
+	</type>
+	<type id="background@repeat">
+	    <constant value=""                  displayName="(None)" />
+		<constant value="repeat" 			displayName="repeat" />
+		<constant value="repeat-x" 			displayName="repeat-x" />
+		<constant value="repeat-y" 			displayName="repeat-y" />
+		<constant value="no-repeat" 		displayName="no-repeat" />
+	</type>
+	<type id="border@style">
+	    <constant value=""                  displayName="(None)" />
+	    <constant value="none"              displayName="none" />
+		<constant value="hidden" 			displayName="hidden" />
+		<constant value="dotted" 			displayName="dotted" />
+		<constant value="dashed" 			displayName="dashed" />
+		<constant value="solid" 			displayName="solid" />
+		<constant value="double" 			displayName="double" />
+		<constant value="groove" 			displayName="groove" />
+		<constant value="ridge" 			displayName="ridge" />
+		<constant value="inset" 			displayName="inset" />
+		<constant value="outset" 			displayName="outset" />
+	</type>
+	<type id="font@family">
+	    <constant value=""                      displayName="(None)" />
+		<constant value="Georgia" 				displayName="Georgia" />
+		<!--  
+		<constant value="Palatino Linotype" 	displayName="Palatino Linotype" />
+		<constant value="Book Antiqua" 			displayName="Book Antiqua" />
+		-->
+		<constant value="Times New Roman" 		displayName="Times New Roman" />
+		<constant value="Arial" 				displayName="Arial" />
+		<constant value="Helvetica" 			displayName="Helvetica" />
+		<constant value="Arial Black" 			displayName="Arial Black" />
+		<!--
+		<constant value="Impact" 				displayName="Impact" />
+		<constant value="Lucida Sans Unicode" 	displayName="Lucida Sans Unicode" />
+		<constant value="Tahoma" 				displayName="Tahoma" />
+		<constant value="Verdana" 				displayName="Verdana" />
+		-->
+		<constant value="Courier New" 			displayName="Courier New" />
+		<!-- 
+		<constant value="Lucida Console" 		displayName="Lucida Console" />
+		 -->
+	</type>
+	<type id="font@size">
+	    <constant value=""      displayName="(None)" />
+		<constant value="6px" 	displayName="6px" />
+		<constant value="8px" 	displayName="8px" />
+		<constant value="9px" 	displayName="9px" />
+		<constant value="10px" 	displayName="10px" />
+		<constant value="11px" 	displayName="11px" />
+		<constant value="12px" 	displayName="12px" />
+		<constant value="14px" 	displayName="14px" />
+		<constant value="16px" 	displayName="16px" />
+		<constant value="18px" 	displayName="18px" />
+		<constant value="20px" 	displayName="20px" />
+		<constant value="22px" 	displayName="22px" />
+		<constant value="24px" 	displayName="24px" />
+		<constant value="26px" 	displayName="26px" />
+		<constant value="28px" 	displayName="28px" />
+		<constant value="36px" 	displayName="36px" />
+		<constant value="48px" 	displayName="48px" />
+		<constant value="72px" 	displayName="72px" />
+	</type>
+	<type id="style@size">
+	    <constant value=""      displayName="(None)" />
+		<constant value="6" 	displayName="6" />
+		<constant value="8" 	displayName="8" />
+		<constant value="9" 	displayName="9" />
+		<constant value="10" 	displayName="10" />
+		<constant value="11" 	displayName="11" />
+		<constant value="12" 	displayName="12" />
+		<constant value="14" 	displayName="14" />
+		<constant value="16" 	displayName="16" />
+		<constant value="18" 	displayName="18" />
+		<constant value="20" 	displayName="20" />
+		<constant value="22" 	displayName="22" />
+		<constant value="24" 	displayName="24" />
+		<constant value="26" 	displayName="26" />
+		<constant value="28" 	displayName="28" />
+		<constant value="36" 	displayName="36" />
+		<constant value="48" 	displayName="48" />
+		<constant value="72" 	displayName="72" />
+	</type>
+	
+</types>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.tabbar" displayName="Tabbar"
+	smallIcon="tabbar_small.png" icon.16="tabbar_16.png"
+	category="Toolbars"
+	description="The tabbar widget supports the grouped button style in the header."
+	helpCategory="Tizen_Widget"
+	helpContents="tabbar"
+	feedbackHeight="57" borderVisible="true"
+	guideText="Drop a Tabbar Item">
+
+	<relations>
+		<content ids="tizen.tabbaritem" max="5"/>
+	</relations>
+
+	<property name="id" type="string" displayName="ID" default="" category="Common">
+		<condition name="string-id" error="string-id" />
+	</property>
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.tabbar">
+			<div data-role="tabbar">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+				<xsl:apply-templates select="html.text"/>
+				<ul>
+					<xsl:apply-templates select="tizen.tabbaritem"/>
+				</ul>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

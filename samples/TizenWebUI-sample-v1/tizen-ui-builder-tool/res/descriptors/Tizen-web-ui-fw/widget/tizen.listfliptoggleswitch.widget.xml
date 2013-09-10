@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.listfliptoggleswitch" displayName="List Flip Toggle Switch"
+	smallIcon="fliptoggleswitch_small.png" icon.16="fliptoggleswitch_16.png"
+	category="List"
+	description="The flip toggle switch widget shows a 2-state switch on the screen. This widget can be used only in the list widget."
+	helpCategory="Tizen_Widget"
+	helpContents="fliptoggleswitch"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.listitem"/>
+	</relations>
+
+	<property name="id"        type="string" displayName="ID"        default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="name"      type="string" displayName="Name"      default=""/>
+	<property name="value-off" type="string" displayName="Off Value" default="" initValue="off"
+		toolitp="Sets the value for the toggle switch 'off' state."/>
+	<property name="value-on"  type="string" displayName="On Value"  default="" initValue="on"
+		toolitp="Sets the value for the toggle switch 'on' state."/>
+	<property name="selected"  type="tizen.fliptoggleswitch@selected" displayName="Selected" default=""/>
+
+	<event name="onchange" displayName="Change" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.listfliptoggleswitch">
+			<select data-role="slider">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+				<xsl:apply-templates select="@name" mode="simple-property"/>
+				<option>
+					<xsl:attribute name="value">
+						<xsl:value-of select="@value-off"/>
+					</xsl:attribute>
+				</option>
+				<option>
+					<xsl:attribute name="value">
+						<xsl:value-of select="@value-on"/>
+					</xsl:attribute>
+					<xsl:apply-templates select="@selected[string-length(.) > 0]" mode="simple-property"/>
+				</option>
+			</select>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

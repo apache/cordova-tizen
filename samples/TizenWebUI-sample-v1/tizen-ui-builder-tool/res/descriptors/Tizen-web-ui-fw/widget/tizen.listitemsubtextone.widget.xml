@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.listitemsubtextone" displayName="Subtext1"
+	smallIcon="listitemsubtextone_small.png" icon.16="listitemsubtextone_16.png"
+	category="List"
+	description="This widget can be used in the list item."
+	helpCategory="Tizen_Widget"
+	helpContents="list"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.listitem"/>
+		<content ids="tizen.listitemsubtexticon"/>
+	</relations>
+
+	<property name="id"   type="string" displayName="ID"   default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text" type="string" displayName="Text" default="" initValue="Sub Text"/>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%"/>
+		<property name="text-align" type="css-text-align" displayName="Text Align" selector="#%id%"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id%"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%"/>
+	</property>
+	<property name="icon" type="tizen.listitemsubtextone@icon" displayName="Icon" default="" initValue="after" category="Multiline">
+		<condition name="enable-property-by-child" value="tizen.listitemsubtexticon"/>
+	</property>
+
+	<!-- <event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.listitemsubtextone">
+			<span class="ui-li-text-sub">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+
+				<xsl:if test="@icon = 'before'">
+					<xsl:apply-templates select="tizen.listitemsubtexticon"/>
+				</xsl:if>
+
+				<xsl:value-of select="@text"/>
+
+				<xsl:if test="@icon = 'after'">
+					<xsl:apply-templates select="tizen.listitemsubtexticon"/>
+				</xsl:if>
+			</span>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

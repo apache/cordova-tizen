@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="html.canvas" displayName="Canvas"
+	smallIcon="canvas_small.png" icon.16="canvas_16.png"
+	category="HTML"
+	description="This widget is a standard HTML widget."
+	helpCategory="Tizen_Html"
+	helpContents=""
+	borderVisible="true"
+	guideText="Canvas">
+
+	<property name="id"     type="string"  displayName="ID"     default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="width"  type="integer" displayName="Width"  default="320"/>
+	<property name="height" type="integer" displayName="Height" default="240"/>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="html.canvas">
+			<canvas>
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+				<xsl:apply-templates select="@width" mode="simple-property"/>
+				<xsl:apply-templates select="@height" mode="simple-property"/>
+			</canvas>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

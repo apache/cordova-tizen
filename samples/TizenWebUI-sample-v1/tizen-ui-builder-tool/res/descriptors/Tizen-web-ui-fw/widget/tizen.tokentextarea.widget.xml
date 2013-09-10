@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.tokentextarea" displayName="Token Text Area"
+	smallIcon="tokentextarea_small.png" icon.16="tokentextarea_16.png"
+	category="Content"
+	description="The token text area widget changes a text item to a button."
+	helpCategory="Tizen_Widget"
+	helpContents="tokentextarea"
+	borderVisible="false">
+
+	<property name="id"               type="string" displayName="ID"    default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="data-label"       type="string" displayName="Label" default="" initValue="To :"
+		tooltip="Sets a label as a guide for the user"/>
+	<property name="group-text" type="group-text" displayName="Label Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% .ui-tokentextarea-label"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id% .ui-tokentextarea-label"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% .ui-tokentextarea-label"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id% .ui-tokentextarea-label"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% .ui-tokentextarea-label"/>
+	</property>
+	<property name="data-description" type="string" displayName="Description" default="+ {0}"
+		tooltip="Manages the message format. The message is displayed when the widget status changes to focus out."/>
+	<property name="data-link"        type="url" displayName="Link"  default=""
+		tooltip="Set the ID of the page to link, like the contact"/>
+
+	<event name="oncreate" displayName="Create" eventType="event.defaultevent" />
+	<event name="onselect" displayName="Select" eventType="event.defaultevent" />
+	<event name="onadd" displayName="Add" eventType="event.defaultevent" />
+	<event name="onremove" displayName="Remove" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.tokentextarea">
+			<div data-role="tokentextarea">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

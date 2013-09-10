@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.progressbar" displayName="Progress Bar"
+	smallIcon="progressbar_small.png" icon.16="progressbar_16.png"
+	category="Content,List"
+	description="The progress bar widget shows a control that indicates the progress percentage of an on-going operation."
+	helpCategory="Tizen_Widget"
+	helpContents="progressbar"
+	borderVisible="false">
+
+	<property name="id" type="string" displayName="ID" default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+
+	<event name="onchange" displayName="Change" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.progressbar">
+			<div data-role="progressbar">
+				<xsl:call-template name="print-part-id" />
+				<xsl:apply-templates select="@*" mode="simple-property" />
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.gallery" displayName="Gallery"
+	smallIcon="gallery_small.png" icon.16="gallery_16.png"
+	category="Content"
+	description="The gallery widget shows images in a gallery on the screen"
+	helpCategory="Tizen_Widget"
+	helpContents="gallery"
+	borderVisible="true"
+	guideText="Drop a Gallery Item.">
+
+	<relations>
+		<content ids="tizen.galleryitem"/>
+	</relations>
+
+	<property name="id"                  type="string"              displayName="ID"             default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="data-index"          type="integer"             displayName="Index"          default="0"
+	   tooltip="Number of the first image"/>
+	<property name="data-vertical-align" type="tizen.gallery@align" displayName="Vertical Align" default="top"
+	   tooltip="Alignment of the images"/>
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.gallery">
+			<div data-role="gallery">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+				<xsl:apply-templates select="html.text"/>
+				<xsl:apply-templates select="tizen.galleryitem"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

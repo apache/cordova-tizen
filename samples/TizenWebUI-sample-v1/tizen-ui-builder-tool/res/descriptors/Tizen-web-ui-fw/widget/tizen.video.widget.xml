@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.video" displayName="Video"
+	smallIcon="video_small.png" icon.16="video_16.png"
+	category="Content"
+	description="The video widget shows a player control that you can use to view and handle multimedia content"
+	helpCategory="Tizen_Widget"
+	helpContents="video"
+	borderVisible="false">
+
+	<property name="id"              type="string"  displayName="ID"         default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="data-control"    type="boolean" displayName="Control"    default="false" />
+	<property name="data-fullscreen" type="boolean" displayName="Fullscreen" default="false"/>
+	<property name="style"           type="string"  displayName="Style"      default=""/>
+	<property name="src"             type="video"   displayName="Src"        default=""/>
+	<property name="type"            type="tizen.video@type"  displayName="Type"       default="video/mp4"/>
+	<property name="data-theme"      type="string"  displayName="Theme"      default=""/>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<event name="oncreate" displayName="Create" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.video">
+			<video>
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+				<xsl:apply-templates select="@data-control" mode="simple-property"/>
+				<xsl:apply-templates select="@data-fullscreen" mode="simple-property"/>
+				<xsl:apply-templates select="@style" mode="simple-property"/>
+				<xsl:apply-templates select="@data-theme" mode="simple-property"/>
+				<source>
+					<xsl:apply-templates select="@src" mode="simple-property"/>
+					<xsl:apply-templates select="@type" mode="simple-property"/>
+				</source>
+			</video>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

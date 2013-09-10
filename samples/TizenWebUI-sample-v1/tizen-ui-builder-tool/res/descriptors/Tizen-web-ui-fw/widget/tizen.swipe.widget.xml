@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.swipe" displayName="Swipe"
+	smallIcon="swipe_small.png" icon.16="swipe_16.png"
+	category="Dynamic List"
+	description="The swipe widget shows on the screen a list view where the list items can be swiped to show a menu."
+	helpCategory="Tizen_Widget"
+	helpContents="swipe"
+	feedbackHeight="63" borderVisible="true"
+	guideText="Drop a Swipe Item">
+
+	<relations>
+		<content ids="tizen.swipeitem"/>
+	</relations>
+
+	<property name="id" type="string" displayName="ID" default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+
+	<event name="onanimationstart" displayName="AnimationStart" eventType="event.defaultevent" />
+	<event name="onanimationend" displayName="AnimationEnd" eventType="event.defaultevent" />
+	<!-- <event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.swipe">
+			<ul data-role="listview">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+				<xsl:apply-templates select="html.text"/>
+				<xsl:apply-templates select="tizen.swipeitem"/>
+			</ul>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

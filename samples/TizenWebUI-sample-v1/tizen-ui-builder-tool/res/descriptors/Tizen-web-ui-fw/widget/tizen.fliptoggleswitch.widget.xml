@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.fliptoggleswitch" displayName="Flip Toggle Switch"
+	smallIcon="fliptoggleswitch_small.png" icon.16="fliptoggleswitch_16.png"
+	category="Form Elements"
+	description="The flip toggle switch widget shows a 2-state switch on the screen."
+	helpCategory="Tizen_Widget"
+	helpContents="fliptoggleswitch"
+	borderVisible="false">
+
+	<property name="id"        type="string" displayName="ID"        default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="name"      type="string" displayName="Name"      default=""/>
+	<property name="value-off" type="string" displayName="Off Value" default="" initValue="off"
+		toolitp="Sets the value for the toggle switch 'off' state."/>
+	<property name="text-off"  type="string" displayName="Off Text"  default="" initValue="Off"
+		toolitp="Sets the label text value for the toggle switch 'off' state."/>
+	<property name="group-text-off" type="group-text" displayName="Off Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%+div .ui-slider-label-b"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%+div .ui-slider-label-b"/>c
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%+div .ui-slider-label-b"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%+div .ui-slider-label-b"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%+div .ui-slider-label-b"/>
+	</property>
+	<property name="value-on"  type="string" displayName="On Value"  default="" initValue="on"
+		toolitp="Sets the value for the toggle switch 'on' state."/>
+	<property name="text-on"   type="string" displayName="On Text"   default="" initValue="On"
+		tooltip="Sets the label text value for the toggle switch 'on' state."/>
+	<property name="group-text-on" type="group-text" displayName="On Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%+div .ui-slider-label-a"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%+div .ui-slider-label-a"/>c
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%+div .ui-slider-label-a"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%+div .ui-slider-label-a"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%+div .ui-slider-label-a"/>
+	</property>
+	<property name="selected"  type="tizen.fliptoggleswitch@selected" displayName="Selected" default=""/>
+
+	<event name="onchange" displayName="Change" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.fliptoggleswitch">
+			<select data-role="slider">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+				<xsl:apply-templates select="@name" mode="simple-property"/>
+				<option>
+					<xsl:attribute name="value">
+						<xsl:value-of select="@value-off"/>
+					</xsl:attribute>
+					<xsl:value-of select="@text-off"/>
+				</option>
+				<option>
+					<xsl:attribute name="value">
+						<xsl:value-of select="@value-on"/>
+					</xsl:attribute>
+					<xsl:apply-templates select="@selected[string-length(.) > 0]" mode="simple-property"/>
+					<xsl:value-of select="@text-on"/>
+				</option>
+			</select>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

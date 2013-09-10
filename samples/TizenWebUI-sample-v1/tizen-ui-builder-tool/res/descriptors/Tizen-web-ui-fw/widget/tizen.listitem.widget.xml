@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.listitem" displayName="List Item"
+	smallIcon="listitem_small.png" icon.16="listitem_16.png"
+	category="List"
+	description="This widget can be used only in the list widget."
+	helpCategory="Tizen_Widget"
+	helpContents="list"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.list"/>
+
+		<content ids="tizen.listitemcolorbar" max="1"/>
+		<content ids="tizen.checkboxitem" max="1" exclusiveGroup="default"/>
+		<content ids="tizen.radiobuttonitem" max="1" exclusiveGroup="default"/>
+		<content ids="tizen.listitemthumbnail" max="1"/>
+		<content ids="tizen.listitemmaintexticonone" max="1"/>
+
+		<content ids="tizen.listitemsubtextone" max="1"/>
+
+		<content ids="tizen.listitemmaintexticontwo" max="1" exclusiveGroup="default2"/>
+		<content ids="tizen.listitemsubtexttwo" max="1" exclusiveGroup="default2"/>
+
+		<content ids="tizen.listbutton" max="1" exclusiveGroup="default3"/>
+		<content ids="tizen.listfliptoggleswitch" max="1" exclusiveGroup="default3"/>
+		<content ids="tizen.progressbar" max="1" exclusiveGroup="default3"/>
+		<content ids="tizen.progress" max="1" exclusiveGroup="default3"/>
+	</relations>
+
+	<property name="id" type="string" displayName="ID" default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+
+	<property name="text" type="string" displayName="Maintext" default="" initValue="List Item" category="List Item"/>
+	<property name="group-text" type="group-text" displayName="Maintext Style" default="" category="List Item">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% a, #%id%"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id% a, #%id%"/>
+		<property name="text-align" type="css-text-align" displayName="Text Align" selector="#%id% a, #%id%"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id% a, #%id%"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% a, #%id%"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% a, #%id%"/>
+	</property>
+	<property name="thumbnail-right" type="boolean" displayName="Thumbnail Right" default="" initValue="false" category="List Item">
+		<condition name="enable-property-by-child" value="tizen.listitemthumbnail"/>
+	</property>
+	<property name="dialogue" type="boolean" displayName="Dialogue" default="" initValue="false" category="List Item"/>
+
+	<property name="multiline" type="boolean" displayName="Multiline" default="" initValue="false" category="Multiline List Item"/>
+
+	<property name="action-item"     type="boolean" displayName="Action Item" default="" initValue="true" category="Link">
+		<condition name="enable-property" value="true" target="href"/>
+		<condition name="enable-property" value="true" target="data-direction"/>
+		<condition name="enable-property" value="true" target="data-dom-cache"/>
+		<condition name="enable-property" value="true" target="data-prefetch"/>
+		<condition name="enable-property" value="true" target="data-transition"/>
+	</property>
+	<property name="href"            type="url"                  displayName="Link To"    default="" category="Link"/>
+	<!-- <property name="data-ajax"       type="boolean"              displayName="Ajax"       default="true" category="Link"/> -->
+	<property name="data-direction"  type="html.link@direction"  displayName="Direction"  default="" category="Link"/>
+	<property name="data-dom-cache"  type="boolean"              displayName="DOM Cache"  default="false" category="Link"/>
+	<property name="data-prefetch"   type="html.link@prefetch"   displayName="Prefetch"   default="" category="Link"/>
+	<!-- <property name="data-rel"        type="html.link@rel"        displayName="Rel"        default="" category="Link"/> -->
+	<property name="data-transition" type="html.link@transition" displayName="Transition" default="slide" category="Link"/>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<!-- <event name="oncreate" displayName="Create" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.listitem">
+			<li>
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@id" mode="simple-property"/>
+
+				<xsl:choose>
+					<xsl:when test="@multiline = 'true' and @thumbnail-right = 'true' and @dialogue = 'true'">
+						<xsl:attribute name="class">
+							<xsl:value-of select="concat('ui-li-has-multiline ui-li-thumbnail-right ui-li-dialogue')"/>
+						</xsl:attribute>
+					</xsl:when>
+					<xsl:when test="@multiline = 'true' and @thumbnail-right = 'true' and @dialogue = 'false'">
+						<xsl:attribute name="class">
+							<xsl:value-of select="concat('ui-li-has-multiline ui-li-thumbnail-right')"/>
+						</xsl:attribute>
+					</xsl:when>
+					<xsl:when test="@multiline = 'true' and @thumbnail-right = 'false' and @dialogue = 'true'">
+						<xsl:attribute name="class">
+							<xsl:value-of select="concat('ui-li-has-multiline ui-li-dialogue')"/>
+						</xsl:attribute>
+					</xsl:when>
+					<xsl:when test="@multiline = 'true' and @thumbnail-right = 'false' and @dialogue = 'false'">
+						<xsl:attribute name="class">
+							<xsl:value-of select="concat('ui-li-has-multiline')"/>
+						</xsl:attribute>
+					</xsl:when>
+					<xsl:when test="@multiline = 'false' and @thumbnail-right = 'true' and @dialogue = 'true'">
+						<xsl:attribute name="class">
+							<xsl:value-of select="concat('ui-li-thumbnail-right ui-li-dialogue')"/>
+						</xsl:attribute>
+					</xsl:when>
+					<xsl:when test="@multiline = 'false' and @thumbnail-right = 'true' and @dialogue = 'false'">
+						<xsl:attribute name="class">
+							<xsl:value-of select="concat('ui-li-thumbnail-right')"/>
+						</xsl:attribute>
+					</xsl:when>
+					<xsl:when test="@multiline = 'false' and @thumbnail-right = 'false' and @dialogue = 'true'">
+						<xsl:attribute name="class">
+							<xsl:value-of select="concat('ui-li-dialogue')"/>
+						</xsl:attribute>
+					</xsl:when>
+				</xsl:choose>
+
+				<xsl:choose>
+					<xsl:when test="@action-item = 'true'">
+						<a data-ajax="true">
+							<xsl:apply-templates select="@href" mode="simple-property"/>
+							<!-- <xsl:apply-templates select="@data-ajax" mode="simple-property"/> -->
+							<xsl:apply-templates select="@data-direction" mode="simple-property"/>
+							<xsl:apply-templates select="@data-dom-cache" mode="simple-property"/>
+							<xsl:apply-templates select="@data-prefetch[string-length(.) > 0]" mode="simple-property"/>
+							<!-- <xsl:apply-templates select="@data-rel" mode="simple-property"/> -->
+							<xsl:apply-templates select="@data-transition" mode="simple-property"/>
+
+							<xsl:apply-templates select="tizen.listitemcolorbar"/>
+							<xsl:apply-templates select="tizen.checkboxitem"/>
+							<xsl:apply-templates select="tizen.radiobuttonitem"/>
+
+							<xsl:if test="@thumbnail-right = 'false'">
+								<xsl:apply-templates select="tizen.listitemthumbnail"/>
+							</xsl:if>
+
+							<xsl:value-of select="@text"/>
+
+							<xsl:apply-templates select="tizen.listitemmaintexticonone"/>
+							<xsl:apply-templates select="tizen.listitemsubtextone"/>
+
+							<xsl:if test="@multiline = 'true'">
+								<xsl:apply-templates select="tizen.listitemmaintexticontwo"/>
+								<xsl:apply-templates select="tizen.listitemsubtexttwo"/>
+							</xsl:if>
+
+							<xsl:if test="@thumbnail-right = 'true'">
+								<xsl:apply-templates select="tizen.listitemthumbnail"/>
+							</xsl:if>
+
+							<xsl:apply-templates select="tizen.listbutton"/>
+							<xsl:apply-templates select="tizen.listfliptoggleswitch"/>
+							<xsl:apply-templates select="tizen.progressbar"/>
+							<xsl:apply-templates select="tizen.progress"/>
+						</a>
+					</xsl:when>
+
+					<xsl:when test="@action-item = 'false'">
+						<xsl:apply-templates select="tizen.listitemcolorbar"/>
+						<xsl:apply-templates select="tizen.checkboxitem"/>
+						<xsl:apply-templates select="tizen.radiobuttonitem"/>
+
+						<xsl:if test="@thumbnail-right = 'false'">
+							<xsl:apply-templates select="tizen.listitemthumbnail"/>
+						</xsl:if>
+
+						<xsl:value-of select="@text"/>
+
+						<xsl:apply-templates select="tizen.listitemmaintexticonone"/>
+						<xsl:apply-templates select="tizen.listitemsubtextone"/>
+
+						<xsl:if test="@multiline = 'true'">
+							<xsl:apply-templates select="tizen.listitemmaintexticontwo"/>
+							<xsl:apply-templates select="tizen.listitemsubtexttwo"/>
+						</xsl:if>
+
+						<xsl:if test="@thumbnail-right = 'true'">
+							<xsl:apply-templates select="tizen.listitemthumbnail"/>
+						</xsl:if>
+
+						<xsl:apply-templates select="tizen.listbutton"/>
+						<xsl:apply-templates select="tizen.listfliptoggleswitch"/>
+						<xsl:apply-templates select="tizen.progressbar"/>
+						<xsl:apply-templates select="tizen.progress"/>
+					</xsl:when>
+				</xsl:choose>
+			</li>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

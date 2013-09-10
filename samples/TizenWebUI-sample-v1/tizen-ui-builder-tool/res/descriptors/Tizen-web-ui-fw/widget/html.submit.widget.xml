@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="html.submit" displayName="Submit Button"
+	smallIcon="submitbutton_small.png" icon.16="submitbutton_16.png"
+	category="HTML,Form Elements"
+	description="This widget is a standard HTML widget."
+	helpCategory="Tizen_Html"
+	helpContents=""
+	borderVisible="false">
+
+	<property name="id"    type="string" displayName="ID"   default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="name"  type="string" displayName="Name" default=""/>
+	<property name="value" type="string" displayName="Text" default="" initValue="Submit"/>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<event name="oncreate" displayName="Create" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="html.submit">
+			<input type="submit">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+			</input>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

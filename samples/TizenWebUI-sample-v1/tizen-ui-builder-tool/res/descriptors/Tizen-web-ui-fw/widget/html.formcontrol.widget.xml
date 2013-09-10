@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="html.formcontrol" displayName="Form Control"
+	smallIcon="formcontrol_small.png" icon.16="formcontrol_16.png"
+	category="HTML,Form Elements"
+	description="This widget is a standard HTML widget."
+	helpCategory="Tizen_Html"
+	helpContents=""
+	feedbackHeight="65" borderVisible="true"
+	guideText="Drop any widget"
+	setStyle="true">
+
+	<relations>
+		<content type="widget"/>
+		<nocontent ids="tizen.header,tizen.footer,tizen.tabbar,tizen.searchfilterbar"/>
+	</relations>
+
+	<property name="id"        type="string" displayName="ID"        default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="action"    type="string" displayName="Action"    default=""/>
+	<property name="method"    type="tizen.formcontrol@method" displayName="Method" default="GET"/>
+	<!-- <property name="data-ajax" type="boolean" displayName="Data Ajax" default="true"/> -->
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="html.formcontrol">
+			<form data-ajax="true">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+
+				<xsl:apply-templates select="*[name() != 'tizen.header' and name() != 'tizen.footer' and name() != 'tizen.tabbar' and name() != 'tizen.searchfilterbar']"/>
+			</form>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

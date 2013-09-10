@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.swipeitem" displayName="Swipe Item"
+	smallIcon="swipeitem_small.png" icon.16="swipeitem_16.png"
+	category="Dynamic List"
+	description="This widget can be used only in the swipe widget."
+	helpCategory="Tizen_Widget"
+	helpContents="swipe"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.swipe" />
+		<content ids="tizen.listbutton" max="4"/>
+	</relations>
+
+	<property name="id" type="string" displayName="ID" default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text" type="string" displayName="Text" default="" initValue="Swipe Item"/>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% p"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id% p"/>
+		<property name="text-align" type="css-text-align" displayName="Text Align" selector="#%id% p"/>
+		<property name="font-weight" type="css-font-weight" displayName="Font Weight" selector="#%id% p"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% p"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id% p"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% p"/>
+	</property>
+
+	<event name="onanimationstart" displayName="AnimationStart" eventType="event.defaultevent" />
+	<event name="onanimationend" displayName="AnimationEnd" eventType="event.defaultevent" />
+	<!-- <event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.swipeitem">
+			<li data-role="swipe">
+				<xsl:call-template name="print-part-id"/>
+
+				<div data-role="swipe-item">
+					<xsl:apply-templates select="tizen.listbutton"/>
+				</div>
+				<div data-role="swipe-item-cover">
+					<xsl:apply-templates select="@id" mode="simple-property"/>
+					<p>
+						<xsl:value-of select="@text"/>
+					</p>
+				</div>
+			</li>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

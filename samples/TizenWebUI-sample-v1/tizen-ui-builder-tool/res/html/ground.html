@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+%meta%
+
+<base href="%page_path%/">
+
+<style>
+body {
+	overflow: hidden;
+}
+
+.showborder {
+	border: 1px gray dashed
+}
+</style>
+<!--
+<script src="%root_path%/%jquery_js%"></script>
+<script src="%root_path%/%tizen_web_ui_fw_libs_js%"></script>
+<script src="%root_path%/%tizen_web_ui_fw_js%" data-framework-theme="%framwork_theme%"></script>
+-->
+%framework%
+
+%style%
+
+<!--
+<link rel="stylesheet" type="text/css" href="%root_path%/app.css">
+-->
+
+<link rel="stylesheet" type="text/css" href="%page_css_path%">
+
+<style type="text/css" id="page_style">
+</style>
+
+<script>
+	$(document).ready(function(){
+		ComingBridge.ready();
+	});
+
+	$.mobile.autoInitialize = false;
+
+	jQuery.fn.outerHtml = function() {
+		return jQuery('<div />').append(this.eq(0).clone()).html();
+	}
+
+	// setBasePath: (path:String) -> ()
+	function setBasePath(path) {
+		//$('base').attr("href", "file:///" + path + "/");
+	}
+
+	// setCssStyle: (style:String) -> ()
+	function setCssStyle(style) {
+		document.getElementById('page_style').innerHTML = style;
+	}
+
+	// scrollTo: (val:str) -> ()
+	function scrollTo(val) {
+	   //$(".ui-mobile").css("transform", "translateY(" + val + "px)");
+	   //$(".ui-mobile").css("-webkit-transform", "translateY(" + val + "px)");
+	   $(".ui-scrollview-view").css("transform", "translateY(" + val + "px)");
+	   $(".ui-scrollview-view").css("-webkit-transform", "translateY(" + val + "px)");
+	}
+	
+	// getScrollPos: () -> int
+	function getScrollPos() {
+	   var pos = $(".ui-mobile").css("-webkit-transform");
+	   //var pos = $(".ui-scrollview-view").css("-webkit-transform");
+       var values = pos.split('(')[1];
+           values = values.split(')')[0];
+           values = values.split(',');
+	   return values[5].trim();
+	}
+	
+	function genPage(html) {
+		$('body').html(html);		
+		//$('[data-role=page]').page().page('refresh').show();		
+		$('[data-role=page]').page().page('setToolbar').show();		
+	    tbPage  = $( ".ui-page" );
+	    $elHeader = $( ".ui-page .ui-header" );
+	    $elFooter = $( ".ui-page .ui-footer" );	 
+	    $elHeader.outerHeight() ? $( tbPage ).css( "padding-top", $elHeader.outerHeight() ) : $( tbPage ).css( "padding-top", 0 );
+	    $elFooter.outerHeight() ? $( tbPage ).css( "padding-bottom", $elFooter.outerHeight() ) : $( tbPage ).css( "padding-bottom", 0 );
+        $(":jqmData(role='tokentextarea')" ).tokentextarea( "refresh" );
+	}
+	
+	function genPage2(html) {
+	    //var newPage = $(html);
+	    //newPage.appendTo( $('body'));
+	    //$('[data-role=page]').page();
+	    //$.mobile.changePage( newPage );
+	    
+        var newPage = $(html);
+        $('[data-role=page]').attr('data-old-page', true);
+        newPage.attr('data-old-page', false);
+        newPage.appendTo( $('body'));
+        $('[data-role=page]').page();
+        $.mobile.changePage( newPage );
+        $('[data-old-page=false]').one('pageshow', function(){
+            console.log('pageshow:' + $(this).attr('id'));
+            $('[data-old-page=true]').remove();
+          });	    
+	}
+	
+	// changeBody: (html:String) -> ()
+	function changeBody(html) {
+		$(':mobile-page').page("destroy");
+
+	    genPage(html);
+	    //genPage2(html);
+	    
+		//$.mobile.resizePageContentHeight($('[data-role=page]'));
+		
+		$('[part-id]').each(
+				function(k, v) {
+					var vv = $(v);
+					if ((!vv.is(":visible"))
+							&& (vv.next().length > 0
+									&& vv.next().is(":visible") && (!(vv.next()
+									.attr("part-id"))))) {
+						vv.next().attr("part-id", vv.attr("part-id")).attr(
+								"data-role", vv.attr("data-role"));
+						vv.attr("part-id", "");
+					}
+				});
+
+		//var fixed = $('[data-position=fixed]');
+		//if ((typeof fixed.fixedtoolbar) === 'function') {
+		//	fixed.fixedtoolbar('destroy');
+		//}
+
+		$(window).unbind("scroll scrollstart scrollstop throttledresize popstate touchmove orientationchange hashchange load resize");
+		$(document).unbind("scroll scrollstart scrollview_start scrollviewcreate silentscroll");
+		$(".ui-multibuttonentry-input").css("display", "none");
+
+		//$('[data-role=header]').css('position', 'relative');
+		//$('[data-role=footer]').css('position', 'relative').css('top', '0');
+	}
+
+	// showBorder: (wid:String) -> ()
+	function showBorder(wid) {
+		var wgt = $("[part-id='" + wid + "']");
+		var w = wgt.width(), h = wgt.height();
+		wgt.addClass("showborder").width(w - 2).height(h - 2);
+	}
+
+	// getClientBound: ()
+	//		-> stringified WidgetPosition
+	function getClientBound() {
+		var wgt = $(".ui-scrollview-view");
+		var loc = wgt.offset();
+		
+		//var head_height = $('[data-role=header]').outerHeight();
+		//var footer_height = $('[data-role=footer]').outerHeight();
+  		var content_height = wgt.outerHeight();// + head_height + footer_height;
+  		if (wgt.children().length > 0){
+  			content_height += parseInt(wgt.children().first().css('margin-top')) 
+  			                + parseInt(wgt.children().last().css('margin-bottom'));
+  		}
+  		 
+		var bound = {
+			x : parseInt(loc.left),
+			y : parseInt(loc.top),
+			w : parseInt(wgt.outerWidth()),
+			h : parseInt(content_height),
+			l : parseInt(wgt.css("margin-left")),
+			r : parseInt(wgt.css("margin-right")),
+			t : parseInt(wgt.css("margin-top")),
+			b : parseInt(wgt.css("margin-bottom"))
+		};
+		if (bound.w < 1) bound.w = 1;
+		if (bound.h < 1) bound.h = 1;
+		return JSON.stringify(bound);
+	}
+
+	// getWindowBound: ()
+	//		-> stringified WidgetPosition
+	function getWindowBound() {
+		var wgt = $(".ui-scrollview-clip");
+		var loc = wgt.offset();
+		
+		var head_height = $('[data-role=header]').outerHeight();
+		var footer_height = $('[data-role=footer]').outerHeight();
+  		var content_height = $(window).height() - head_height - footer_height ;
+
+		var bound = {
+			x : parseInt(loc.left),
+			y : parseInt(loc.top),
+			w : parseInt(wgt.outerWidth()),
+			h : parseInt(content_height),
+			l : parseInt(wgt.css("margin-left")),
+			r : parseInt(wgt.css("margin-right")),
+			t : parseInt(wgt.css("margin-top")),
+			b : parseInt(wgt.css("margin-bottom"))
+		};
+		if (bound.w < 1) bound.w = 1;
+		if (bound.h < 1) bound.h = 1;
+		return JSON.stringify(bound);
+	}
+
+	function getPageBound() {
+		var wgt = $(".ui-scrollview-clip");
+		var loc = wgt.offset();
+		
+  		var content_width = $(window).width();
+  		var content_height = $(window).height();
+
+		var bound = {
+			x : parseInt(0),
+			y : parseInt(0),
+			w : parseInt(content_width),
+			h : parseInt(content_height),
+			l : parseInt(wgt.css("margin-left")),
+			r : parseInt(wgt.css("margin-right")),
+			t : parseInt(wgt.css("margin-top")),
+			b : parseInt(wgt.css("margin-bottom"))
+		};
+		return bound;
+	}
+	
+	function getOneWidgetBound(wgt) {
+		var loc = wgt.offset();
+		var bound = {
+			x : parseInt(loc.left),
+			y : parseInt(loc.top),
+			w : parseInt(wgt.outerWidth()),
+			h : parseInt(wgt.outerHeight()),
+			l : parseInt(wgt.css("margin-left")),
+			r : parseInt(wgt.css("margin-right")),
+			t : parseInt(wgt.css("margin-top")),
+			b : parseInt(wgt.css("margin-bottom"))
+		};
+		if (bound.w < 1) bound.w = 1;
+		if (bound.h < 1) bound.h = 1;
+		return bound;
+	}
+
+	function getContentBound() {
+		var bound = getOneWidgetBound($(".ui-scrollview-clip"))
+		
+		var head_height = $('[data-role=header]').outerHeight();
+		var footer_height = $('[data-role=footer]').outerHeight();
+  		var content_height = $(window).height() - head_height - footer_height ;
+  		
+  		bound.h = content_height;
+
+		return bound;
+	}
+
+	function getWidgetRecursiveBound(wgt) {
+		var children = wgt.children();
+		var bound = getOneWidgetBound(wgt);
+		//bound.x -= bound.l; bound.w += (bound.l + bound.r);
+		//bound.y -= bound.t; bound.h += (bound.t + bound.b);
+		
+		if(wgt.css("overflow") != "hidden"){	
+			for ( var i = 0; i < children.length; i++) {
+				var ch = $(children[i]);
+				if (ch.is(":visible")) {
+					var cbound = getWidgetRecursiveBound(ch);
+
+					if (cbound != null) {
+						if (cbound.x < bound.x) {
+							bound.w += (bound.x - cbound.x);
+							bound.x = cbound.x;
+						}
+						if (cbound.y < bound.y) {
+							bound.h += (bound.y - cbound.y);
+							bound.y = cbound.y;
+						}
+						if ((cbound.x + cbound.w) > (bound.x + bound.w)) {
+							bound.w += (cbound.x + cbound.w) - (bound.x + bound.w);
+						}
+						if ((cbound.y + cbound.h) > (bound.y + bound.h)) {
+							bound.h += (cbound.y + cbound.h) - (bound.y + bound.h);
+						}
+					}
+				}
+			}
+		}
+		return bound;
+	}
+
+	function getWidgetBoundIncludeAbove(wgt, prev_wgt_style) {
+		var bound = getOneWidgetBound(wgt);
+		
+		var ch = wgt.prev();
+		if (ch != null) {
+			if (prev_wgt_style != null && ch.is(prev_wgt_style)) {
+				var cbound = getOneWidgetBound(ch);
+				if (cbound != null) {
+					if (cbound.x < bound.x) {
+						bound.w += (bound.x - cbound.x);
+						bound.x = cbound.x;
+					}
+					if (cbound.y < bound.y) {
+						bound.h += (bound.y - cbound.y);
+						bound.y = cbound.y;
+					}
+				}
+			}
+		}
+		return bound;
+	}
+
+	// getWidgetBound: (widget:jQuery) -> {x:number, y:number, w:number, h:number, l: r: t: b:}
+	// 자기 자식의 bound를 모두 포함하고, 크기가 최소 1px * 1px 이상이 되도록 반환
+	function getWidgetBound(wgt) {
+		var role = wgt.attr("data-role");
+		if (role === "page") {
+			return getPageBound();
+		} else if (role === "content") {
+			return getContentBound();
+		} else if (role === "colorpicker") {
+			return getWidgetRecursiveBound(wgt);
+		} else if (role === "list") {
+			return getWidgetBoundIncludeAbove(wgt, "form[role=search]:visible");
+		} else {
+			return getWidgetRecursiveBound(wgt);
+			//return getOneWidgetBound(wgt);
+		}
+	}
+
+	// getWidgetPosition: (wid:String) -> stringified WidgetPosition
+	function getWidgetPosition(wid) {
+		var wgt = $("[part-id='" + wid + "']");
+
+		if (wgt !== null && wgt !== undefined && wgt.length > 0) {
+			if (wgt.attr("cg-bound") !== undefined) {
+				return wgt.attr("cg-bound");
+			}
+			return JSON.stringify(getWidgetBound(wgt));
+		}
+		return null;
+	}
+
+	// getAllWidgetPositions: ()
+	//		-> stringified [{wid:String, rectangle:WidgetPosition}]
+	function getAllWidgetPositions() {
+		var result = [];
+		
+		$("*[part-id]").each(function() {
+			var t = $(this);
+
+			if (t.attr("cg-excluded")) {
+				result.push({
+					wid : t.attr("part-id"),
+					rectangle : JSON.parse(t.attr("cg-bound"))
+				});
+			} else {
+				result.push({
+					wid : t.attr("part-id"),
+					rectangle : getWidgetBound(t)
+				});
+			}
+		});
+		var h = $("[data-role=header]:not([part-id])");
+		var f = $("[data-role=footer]:not([part-id])");
+		if (h.length > 0) {
+			result.push({
+				wid : ":header",
+				rectangle : getWidgetBound(h)
+			});
+		}
+		if (f.length > 0) {
+			result.push({
+				wid : ":footer",
+				rectangle : getWidgetBound(f)
+			});
+		}
+		return JSON.stringify(result);
+	}
+
+	// getWidgetPositions: (wid:[String]) -> stringified [{wid:String, rectangle:WidgetPosition}]
+	function getWidgetPositions(wids) {
+		var result = [];
+
+		for ( var i = 0; i < wids.length; i++) {
+			result.push({
+				wid : wids[i],
+				rectangle : getWidgetBound($("[part-id='" + wids[i] + "']"))
+			});
+		}
+		return JSON.stringify(result);
+	}
+
+	// widgetId: (dom:jQuery) -> (wid:String)
+	function widgetId(dom) {
+		if (dom.length === 0) {
+			return null;
+		}
+		if (dom.attr("part-id") !== undefined) {
+			return dom.attr("part-id");
+		} else {
+			return widgetId(dom.parent());
+		}
+	}
+
+	// includeAllWidgets: () -> ()
+	function includeAllWidgets() {
+		$("[cg-excluded]").each(function(index, elem) {
+			//$(elem).css("display", "");
+			$(elem).css("opacity", "1.0");
+		});
+		$("[cg-excluded]").removeAttr("cg-excluded").removeAttr("cg-bound");
+	}
+
+	// excludeWidgets: (wids:[String]) -> ()
+	function excludeWidgets(wids) {
+		var i, widget;
+		for (i = 0; i < wids.length; i++) {
+			widget = $("[part-id='" + wids[i] + "']");
+
+			widget.attr("cg-bound", getWidgetPosition(wids[i]));
+		}
+		for (i = 0; i < wids.length; i++) {
+			widget = $("[part-id='" + wids[i] + "']");
+
+			widget.attr("cg-excluded", "true");
+			//widget.css("display", "none");
+			widget.css("opacity", "0.2");
+		}
+	}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

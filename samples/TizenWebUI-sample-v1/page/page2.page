@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tizenFile>
+    <fileInfo>
+        <type>tizen-page</type>
+        <version>0.0.2</version>
+        <desc>Tizen Web UI Builder Project</desc>
+    </fileInfo>
+    <document>
+        <documentInfo>
+            <title>test</title>
+            <author>noname</author>
+            <version>0.1.1</version>
+        </documentInfo>
+        <documentData>
+            <tizen.css/>
+            <tizen.doc>
+                <tizen.page id="page2" data-dom-cache="false" data-title="" onpagebeforecreate="onpagebeforecreate" onpagecreate="onpagecreate" onpageinit="onpageinit" onpagebeforeshow="onpagebeforeshow" onpageshow="onpageshow" onpagebeforehide="onpagebeforehide" onpagehide="onpagehide" onpageremove="onpageremove" onupdatelayout="onupdatelayout">
+                    <tizen.header id="header1" text="Two" text2="" data-position="fixed" icon-id="" src=""/>
+                    <tizen.content id="content1" data-handler="false">
+                        <html.htmlblock id="htmlblock1" class="">I have an id of "two" on my page container. I'm the second page container in this multi-page template.</html.htmlblock>
+                        <tizen.button id="button1" text="Back to page &quot;one&quot;" data-style="" data-icon="" data-iconpos="left" data-inline="false" ontap="button1_ontap"/>
+                        <tizen.button id="button2" text="Battery" data-style="" data-icon="" data-iconpos="left" data-inline="false" ontap="button2_ontap"/>
+                    </tizen.content>
+                </tizen.page>
+            </tizen.doc>
+        </documentData>
+    </document>
+</tizenFile>

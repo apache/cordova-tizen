@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tizenFile>
+    <fileInfo>
+        <type>tizen-project</type>
+        <version>0.0.2</version>
+        <desc>Tizen Web UI Builder Project</desc>
+    </fileInfo>
+    <tizenProject>
+        <metas>
+            <meta type="framework" param="name='viewport'" param2="content='width=%viewportmode%,user-scalable=no'"/>
+        </metas>
+        <libraries>
+            <library type="framework" param="@tizen_jquery"/>
+            <library type="framework" param="@tizen_lib"/>
+            <library type="framework" param="@tizen_core"/>
+            <library type="system" param="./tizen-ui-builder-fw/page-system.js"/>
+            <library type="system" param="./app.managed.js"/>
+            <library type="pages" param="all"/>
+            <library type="entry" param="./tizen-ui-builder-fw/app-entry.js"/>
+            <library type="user" param="./cordova/cordova.js"/>
+            <library type="entry" param="./app.js"/>
+        </libraries>
+        <frameworks>
+            <variables>
+                <variable name="theme" value="tizen-white"/>
+                <variable name="viewportmode" value="device-width"/>
+            </variables>
+            <framework param="@tizen_jquery" path="tizen-web-ui-fw/latest/js/jquery.js"/>
+            <framework param="@tizen_lib" path="tizen-web-ui-fw/latest/js/tizen-web-ui-fw-libs.js"/>
+            <framework param="@tizen_core" path="tizen-web-ui-fw/latest/js/tizen-web-ui-fw.js" param2="data-framework-theme='%theme%'"/>
+        </frameworks>
+        <pages>
+            <page name="page1" startup="true" pagePath="page/page1.page" jsPath="page/page1.js" managedJsPath="page/page1.managed.js" htmlPath="page/page1.html" cssPath="page/page1.css" managedCssPath="page/page1.managed.css"/>
+            <page name="page2" startup="false" pagePath="page/page2.page" jsPath="page/page2.js" managedJsPath="page/page2.managed.js" htmlPath="page/page2.html" cssPath="page/page2.css" managedCssPath="page/page2.managed.css"/>
+        </pages>
+        <stylesheets>
+            <stylesheet type="framework" param="tizen-web-ui-fw/latest/themes/%theme%/tizen-web-ui-fw-theme.css" param2="name='tizen-theme'"/>
+            <stylesheet type="user" param="./cordova/cordova-tizen.css"/>
+            <stylesheet type="user" param="./app.css"/>
+        </stylesheets>
+    </tizenProject>
+</tizenFile>

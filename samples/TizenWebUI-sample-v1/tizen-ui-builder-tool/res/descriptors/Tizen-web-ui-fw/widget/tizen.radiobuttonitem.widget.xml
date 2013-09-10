@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.radiobuttonitem" displayName="Radio Button Item"
+	smallIcon="radiobuttonitem_small.png" icon.16="radiobuttonitem_16.png"
+	category="Form Elements,List"
+	description="This widget can be used only in the radio button and list widget."
+	helpCategory="Tizen_Widget"
+	helpContents=""
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.radiobuttons,tizen.listitem"/>
+	</relations>
+
+	<condition name="change-property-by-parent" value="tizen.listitem" target="text" targetValue=""/>
+
+	<property name="id"       type="string" displayName="ID"    default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text"     type="string" displayName="Text"  default="" initValue="Option">
+		<condition name="disable-property-by-parent" value="tizen.listitem"/>
+	</property>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id%+label .ui-btn-text"/>
+		<property name="font-size" type="font@size" displayName="Font Size" selector="#%id%+label .ui-btn-text"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id%+label .ui-btn-text"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id%+label .ui-btn-text"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id%+label .ui-btn-text"/>
+	</property>c
+	<property name="name"     type="string" displayName="Name"  default="" initValue="radio"/>
+	<property name="value"    type="string" displayName="Value" default=""/>
+	<property name="checked"  type="tizen@checked"  displayName="Checked"  default="">
+		<condition name="change-other-property-by-parent" value="checked" target="tizen.radiobuttons" targetValue=""/>
+		<condition name="change-other-property-by-grandparent" value="checked" target="tizen.list" targetValue=""/>
+	</property>
+	<property name="disabled" type="tizen@disabled" displayName="Disabled" default=""/>
+
+	<event name="onchange" displayName="Change" eventType="event.defaultevent" />
+	<!-- <event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+	<event name="oncreate" displayName="Create" eventType="event.defaultevent" /> -->
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.radiobuttonitem">
+			<input type="radio">
+				<xsl:attribute name="id">
+					<xsl:value-of select="@id"/>
+				</xsl:attribute>
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@name" mode="simple-property"/>
+				<xsl:apply-templates select="@value" mode="simple-property"/>
+				<xsl:apply-templates select="@checked[string-length(.) > 0]" mode="simple-property"/>
+				<xsl:apply-templates select="@disabled[string-length(.) > 0]" mode="simple-property"/>
+			</input>
+
+			<xsl:if test="string-length(@text) != 0">
+				<label>
+					<xsl:attribute name="for">
+						<xsl:value-of select="@id"/>
+					</xsl:attribute>
+					<xsl:value-of select="@text"/>
+				</label>
+			</xsl:if>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

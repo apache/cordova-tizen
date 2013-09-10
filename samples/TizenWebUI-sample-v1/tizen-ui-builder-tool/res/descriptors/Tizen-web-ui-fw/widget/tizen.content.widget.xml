@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.content" displayName="Content"
+	smallIcon="" icon.16="content_16.png"
+	category="Content"
+	description="The content is the area below the header, showing the main content of the page"
+	paletteVisible="false"
+	helpCategory="Tizen_Widget"
+	helpContents="content"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.page"/>
+		<content type="widget"/>
+		<nocontent ids="tizen.page,tizen.content,tizen.header,tizen.footer,tizen.tabbar,tizen.searchfilterbar"/>
+	</relations>
+
+	<property name="id"           type="string"  displayName="ID"      default="" category="Common"/>
+	<property name="data-handler" type="boolean" displayName="Handler" default="false"/>
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.content">
+			<div data-role="content" data-scroll="y">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*" mode="simple-property"/>
+				<xsl:apply-templates select="*"/>
+			</div>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

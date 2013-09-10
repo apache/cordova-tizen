@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+%meta%
+
+<base href="%page_path%/">
+
+<style type="text/css">
+body {
+	overflow: hidden;
+    margin: auto;
+    x-width: 720px; 
+    x-height: 1280px;
+    
+    transform-origin: 0 0;
+    transform: scale(1);
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(1);
+}
+</style>
+<!-- 
+<script src="%tool_path%/jq/json2.js"></script>
+<script src="%root_path%/tizen-web-ui-fw/latest/js/jquery.js"></script>
+<script src="%root_path%/tizen-web-ui-fw/latest/js/tizen-web-ui-fw-libs.js"></script>
+<script src="%root_path%/tizen-web-ui-fw/latest/js/tizen-web-ui-fw.js" data-framework-theme="%framwork_theme%"></script>
+-->
+%framework%
+
+%style%
+
+<!--
+<link rel="stylesheet" type="text/css" href="%root_path%/app.css" />
+-->
+
+<link rel="stylesheet" type="text/css" href="%page_css_path%">
+
+<style type="text/css" id="page_managed_style">
+%css%
+</style>
+ 
+<script>
+	// setBasePath: (path:String) -> ()
+	function setBasePath(path) {
+//		$('base').attr("href", "file:///" + path + "/");
+	}
+
+	// setBasePath: (path:String) -> ()
+	function setZoomScale(scale) {
+//		$(body).attr("scale", scale);
+	}
+	
+	// changeBody: (html:String) -> ()
+	function changeBody(html) {
+		$(':mobile-page').page("destroy");
+
+		$('body').html(html);
+		$('[data-role=page]').page();
+		$('[data-role=page]').show();
+		$('[part-id]').each(
+				function(k, v) {
+					var vv = $(v);
+					if ((!vv.is(":visible"))
+							&& (vv.next().length > 0
+									&& vv.next().is(":visible") && (!(vv.next()
+									.attr("part-id"))))) {
+						vv.next().attr("part-id", vv.attr("part-id")).attr(
+								"data-role", vv.attr("data-role"));
+						vv.attr("part-id", "");
+					}
+				});
+
+		var fixed = $('[data-position=fixed]');
+		if ((typeof fixed.fixedtoolbar) === 'function') {
+			fixed.fixedtoolbar('destroy');
+		}
+
+		$(window)
+				.unbind(
+						"scroll scrollstart scrollstop throttledresize popstate touchmove orientationchange hashchange load resize");
+		$(document)
+				.unbind(
+						"scroll scrollstart scrollview_start scrollviewcreate silentscroll");
+		$(".ui-multibuttonentry-input").css("display", "none");
+
+		//$('[data-role=header]').css('position', 'relative');
+		//$('[data-role=footer]').css('position', 'relative').css('top', '0');
+	}
+	
+	$(document).ready(function() {
+		$('[part-id]').each(
+				function(k, v) {
+					var vv = $(v);
+					if ((!vv.is(":visible"))
+							&& (vv.next().length > 0
+									&& vv.next().is(":visible") && (!(vv.next()
+									.attr("part-id"))))) {
+						vv.next().attr("part-id", vv.attr("part-id")).attr(
+								"data-role", vv.attr("data-role"));
+						vv.attr("part-id", "");
+					}
+				});
+
+		var fixed = $('[data-position=fixed]');
+		if ((typeof fixed.fixedtoolbar) === 'function') {
+			fixed.fixedtoolbar('destroy');
+		}
+
+		$(window)
+				.unbind(
+						"scroll scrollstart scrollstop throttledresize popstate touchmove orientationchange hashchange load resize");
+		$(document)
+				.unbind(
+						"scroll scrollstart scrollview_start scrollviewcreate silentscroll");
+		$(".ui-multibuttonentry-input").css("display", "none");
+
+		//$('[data-role=header]').css('position', 'relative');
+		//$('[data-role=footer]').css('position', 'relative').css('top', '0');
+	});
+</script>
+</head>
+
+<body>
+%html%
+</body>
+
+</html>

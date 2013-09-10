@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="tizen.listdivider" displayName="List Divider"
+	smallIcon="listdivider_small.png" icon.16="listdivider_16.png"
+	category="List"
+	description="The list divider widget is used as a list separator for grouping lists. This widget can be used only in the list widget."
+	helpCategory="Tizen_Widget"
+	helpContents="listdivider"
+	borderVisible="false">
+
+	<relations>
+		<parent ids="tizen.list"/>
+		<content ids="tizen.checkboxitem" max="1"/>
+	</relations>
+
+	<property name="id"         type="string"                  displayName="ID"    default="" category="Common">
+		<condition name="string-id" error="string-id"/>
+	</property>
+	<property name="text"       type="string"                  displayName="Text"  default="" initValue="List Divider"/>
+	<property name="group-text" type="group-text" displayName="Text Style" default="">
+		<property name="font-family" type="font@family" displayName="Font Family" selector="#%id% span"/>
+		<property name="font-style" type="css-font-style" displayName="Font Style" selector="#%id% span"/>
+		<property name="text-decoration" type="css-text-decoration" displayName="Text Decoration" selector="#%id% span"/>
+		<property name="color" type="css-color" displayName="Color" selector="#%id% span"/>
+	</property>
+	<property name="data-style" type="tizen.listdivider@style" displayName="Style" default="normal"
+		tooltip="Sets the style of the list divider"/>
+
+	<event name="ontap" displayName="Tap" eventType="event.defaultevent" />
+	<event name="ontaphold" displayName="TapHold" eventType="event.defaultevent" />
+	<event name="onswipe" displayName="Swipe" eventType="event.defaultevent" />
+	<event name="onswipeleft" displayName="SwipeLeft" eventType="event.defaultevent" />
+	<event name="onswiperight" displayName="SwipeRight" eventType="event.defaultevent" />
+
+	<xsl-for-output xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+		<xsl:template match="tizen.listdivider">
+			<li data-role="list-divider">
+				<xsl:call-template name="print-part-id"/>
+				<xsl:apply-templates select="@*[name() != 'text']" mode="simple-property"/>
+				<xsl:value-of select="@text"/>
+
+				<xsl:if test="@data-style = 'check'">
+					<form>
+						<xsl:apply-templates select="tizen.checkboxitem"/>
+					</form>
+				</xsl:if>
+			</li>
+		</xsl:template>
+	</xsl-for-output>
+</widget>

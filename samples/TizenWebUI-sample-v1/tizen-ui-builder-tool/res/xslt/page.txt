@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<document>
+    <documentInfo>
+        <title>test</title>
+        <author>noname</author>
+        <version>0.1.1</version>
+    </documentInfo>
+    
+    <documentData>
+    	<page>
+	        <properties>
+	        	<tizen.page id="page1" header-text="Header" footer-text="Footer">
+	        </properties>
+	        <events>
+	        </events>
+	        
+	        <childlayout>
+	            <tizen.button id="button2" text="Button"/>
+	            
+	            <widget type="tizen.button" id="button2">
+	            	<properties>
+	            		<property name="text">Button</property>
+	            	</properties>
+	            	<events>
+	            		<event name="ontab" func="button1_ontab"/>
+	            	</events>
+	            	<childlayout>
+	            	</childlayout>
+	            </widget>
+	            
+	            <tizen.button id="button3" text="Button"/>
+	            <tizen.button id="button1" text="Button"/>
+	        </layout>
+	     </page>
+    </documentData>
+</document>

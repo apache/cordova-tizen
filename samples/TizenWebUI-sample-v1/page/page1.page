@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tizenFile>
+    <fileInfo>
+        <type>tizen-page</type>
+        <version>0.0.2</version>
+        <desc>Tizen Web UI Builder Project</desc>
+    </fileInfo>
+    <document>
+        <documentInfo>
+            <title>test</title>
+            <author>noname</author>
+            <version>0.1.1</version>
+        </documentInfo>
+        <documentData>
+            <tizen.css/>
+            <tizen.doc>
+                <tizen.page id="page1" data-dom-cache="false" data-title="" onpagebeforecreate="onpagebeforecreate" onpagecreate="onpagecreate" onpageinit="onpageinit" onpagebeforeshow="onpagebeforeshow" onpageshow="onpageshow" onpagebeforehide="onpagebeforehide" onpagehide="onpagehide" onpageremove="onpageremove" onupdatelayout="onupdatelayout">
+                    <tizen.header id="header1" text="Multi-page application" text2="" data-position="fixed" icon-id="" src=""/>
+                    <tizen.content id="content1" data-handler="false">
+                        <html.htmlblock id="htmlblock1" class="">This is a multi-page boilerplate template that you can copy to build your first Tizen Web UI Framework page.&lt;br&gt; This template contains multiple "page" containers inside.&lt;br&gt; &lt;br&gt; You link to internal pages by referring to the ID of the page you want to show.&lt;br&gt; For example, to &lt;a href="page2.html"&gt;link&lt;/a&gt; to the page with an ID of "two", my link would have a &lt;span style="font-style:italic"&gt;href="page2.html"&lt;/span&gt; in the code.</html.htmlblock>
+                        <html.heading id="heading3" text="Show internal pages:" size="3"/>
+                        <tizen.button id="button1" text="Show page &quot;two&quot;" data-style="" data-icon="" data-iconpos="left" data-inline="false" ontap="button1_ontap"/>
+                        <tizen.button id="button2" text="Battery" data-style="" data-icon="" data-iconpos="left" data-inline="false" ontap="button2_ontap"/>
+                    </tizen.content>
+                </tizen.page>
+            </tizen.doc>
+        </documentData>
+    </document>
+</tizenFile>

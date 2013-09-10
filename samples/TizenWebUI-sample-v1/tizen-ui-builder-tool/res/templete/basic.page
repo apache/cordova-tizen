@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tizenFile>
+    <fileInfo>
+        <type>tizen-page</type>
+        <version>0.0.2</version>
+        <desc>Tizen Web UI Builder Project</desc>
+    </fileInfo>
+    <document>
+        <documentInfo>
+            <title>basic_page</title>
+            <author>noname</author>
+            <version>0.1.1</version>
+        </documentInfo>
+        <documentData>
+            <tizen.css/>
+            <tizen.doc>
+                <tizen.page id="#id" data-add-back-btn="true">
+                    <tizen.header id="header1" text="Header"/>
+                    <tizen.content id="content1"/>
+                </tizen.page>
+            </tizen.doc>
+        </documentData>
+    </document>
+</tizenFile>
