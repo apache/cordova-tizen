@@ -1,0 +1,16 @@
+{
+  "name": "cordova-tizen",
+  "version": "3.4.0",
+  "description": "cordova-tizen release",
+  "repository": {
+    "type": "git",
+    "url": "https://git-wip-us.apache.org/repos/asf/cordova-tizen.git"
+  },
+  "keywords": [
+    "tizen",
+    "cordova",
+    "apache"
+  ],
+  "author": "Apache Software Foundation",
+  "license": "Apache Version 2.0"
+}
