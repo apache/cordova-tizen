@@ -4,7 +4,7 @@
   "description": "cordova-tizen release",
   "repository": {
     "type": "git",
-    "url": "https://git-wip-us.apache.org/repos/asf/cordova-tizen.git"
+    "url": "https://github.com/apache/cordova-tizen"
   },
   "keywords": [
     "tizen",
