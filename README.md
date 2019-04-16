@@ -1,6 +1,16 @@
 Cordova implementation for TIZEN
 ===
 
+---
+📌 **Deprecation Notice**
+
+This repository is deprecated and no more work will be done on this by Apache Cordova. You can continue to use this and it should work as-is but any future issues will not be fixed by the Cordova community.
+
+Feel free to fork this repository and improve your fork. Existing forks are listed in [Network](../../network) and [Forks](../../network/members).
+
+- Learn more: https://github.com/apache/cordova/blob/master/deprecated.md#deprecated-platforms
+---
+
 Cordova implementation for TIZEN is a JavaScript Wrapper library allowing to build and run Cordova based projects on [TIZEN](https://www.tizen.org/).
 Cordova based applications are, at the core, an application written with web technology: HTML, CSS and JavaScript.
 
